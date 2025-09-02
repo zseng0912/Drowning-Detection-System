@@ -1,0 +1,7 @@
+fastapi-backend/video/
+fastapi-backend/pythonEnv/
+fastapi-backend/processed_outputs/
+fastapi-backend/temp_uploads/
+fastapi-backend/models/
+fastapi-backend/test/
+FYP Backup/

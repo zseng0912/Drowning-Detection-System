@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Malaysia EMS Map</name>
+    <description><![CDATA[IN MALAYSIA, DIAL 999 IN CASE OF EMERGENCY.<br>For more information on Malaysian ambulance and emergency medical services visit Trek Medics' website:<br>https://www.trekmedics.org/database/malaysia-2/]]></description>
+    <Style id="icon-1593-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1593-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1593-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1593-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1593-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1657-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1657-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1657-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1657-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1657-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1806-A52714-normal">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1806-A52714-highlight">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1806-A52714">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1806-A52714-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1806-A52714-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1806-A52714-nodesc-normal">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1806-A52714-nodesc-highlight">
+      <IconStyle>
+        <color>ff1427a5</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1806-A52714-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1806-A52714-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1806-A52714-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1806-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1806-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1806-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1806-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1806-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-nodesc-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-nodesc-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Civil Defense Malaysia</name>
+      <Placemark>
+        <name>Selangor: Angkatan Pertahanan Awam Daerah Klang
+
+</name>
+        <description><![CDATA[+60 3-3371 5921<br>www.civildefence.gov.my<br>https://www.facebook.com/APMDAERAHKLANG/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.4429884,3.0454566,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[WP: National Disaster Management Agency, Prime Minister's Department]]></name>
+        <description><![CDATA[Agensi Pengurusan Bencana Negara, Jabatan Perdana Menteri<br>https://www.facebook.com/nadma.pmd/<br>+60 10-901 0939]]></description>
+        <styleUrl>#icon-1657-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.704511,2.9368907,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Red Crescent Malaysia</name>
+      <Placemark>
+        <name>MRC: Johor - Johor Bahru</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.765,1.4608333,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Johor - Kampung Pasir</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.70256,1.49397,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Kedah - Alor Setar</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.3707598,6.1400881,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Kedah - Operations Center</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.419578,6.272556,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Kelantan - Kota Bharu</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.24129,6.121758,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: KL - Federal Territory</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.7253947,3.1949671,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: KL - National HQ</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.7010238,3.1331961,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: KL - Wilayah Persekutuan</name>
+        <description><![CDATA[Tel : +603 – 21649209<br>http://www.redcrescent.org.my/branches/central-zone/<br>pbsmkl@gmail.com]]></description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            101.71577,3.1631209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: KL - Wilayah Persekutuan</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6757721,3.1415159,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Melaka - Bukit Baru</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.266664,2.21669,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Negeri Sembilan</name>
+        <description>+6 06 763 9097</description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            101.937894,2.727571,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Pahanag - Bentong</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.9002198,3.5298457,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Pahang - Kuantan</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.3249867,3.8086967,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Perak - Ipoh</name>
+        <description><![CDATA[Lot. No 4890N, Jalan Komplek Sukan,<br>Berhampiran Stadium Perak,<br>31400 Ipoh, Perak<br><br>+6 05 5466159<br>bsmmpk@yahoo.com<br>Website : http://www.bsmm-perak.blogspot.com/]]></description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            101.10204,4.603611,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Perlis - Kangar</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.19582,6.442271,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Pulau Pinang - Bukit Mertajam</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4592459,5.363983,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Pulau Pinang - Jelutong</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.2981849,5.406086,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Pulau Pinang - Simpang Ampat</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.477684,5.299911,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Putrajaya</name>
+        <description><![CDATA[BSMM Cawangan Putrajaya<br>d/a SMK Putrajaya Presint 11 (1)<br>Jalan P11 J1<br>62300 Presint 11<br>Putrajaya<br>Email : rajanazrin@redcrescent.org.my]]></description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            101.6785469,2.9504766,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Sabah - Kota Kinabalu</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            116.084415,5.978729,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Sarawak - Kuching</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            110.340566,1.554317,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Sarawak - Sarikel</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            111.5304995,2.1203707,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Sarawak - Sibu</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            111.8192648,2.3049925,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Selangor - Klang District</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.4460657,3.0433444,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Selangor - Petaling Jaya District</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6464082,3.0923042,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Selangor - Bukit</name>
+        <description><![CDATA[Tel : +6 03 – 2284 9221<br>Fax : +6 03 – 2284 2514<br>Hp : +6 016 – 693 4314<br>selangorrc@redcrescent.org.my<br>http://www.redcrescent.org.my/branches/central-zone/<br>JKR No. 2564 (17) Jalan Selangor, Bukit Persekutuan<br>50480 Kuala Lumpur]]></description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            101.6898564,3.1541758,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: Terengganu - Kuala Terengganu</name>
+        <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.149558,5.324871,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MRC: W.P. Labuan</name>
+        <description><![CDATA[D/A Samsuddin Md. Isa<br>TELEKOM (M) BHD Jalan Kg Jawa<br>87007 WP LABUAN<br><br>Tel : +6 014 6791799<br>Fax : +6087 – 418 185]]></description>
+        <styleUrl>#icon-1806-A52714</styleUrl>
+        <Point>
+          <coordinates>
+            115.2489927,5.28151,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>St. John Ambulance Malaysia</name>
+      <Placemark>
+        <name>SJAM: Gurun</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4736561,5.8121148,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Melaka State HQ</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.2647715,2.2129591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Muar</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.5638613,2.0322858,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Johor - Bahru HQ</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.7611512,1.4807538,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[SJAM: Johor - Darul Ta'zim]]></name>
+        <description><![CDATA[+60 12-777 2664<br>https://www.facebook.com/St-John-Ambulance-of-Malaysia-Segamat-Area-Johor-Darul-Tazim-447494035371700/<br>30 Jalan Serikaya 2, Segamat baru 85000]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            102.8491867,2.4957355,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Johor - Open Division</name>
+        <description><![CDATA[012-280-0260<br>https://www.facebook.com/sjamjohoropendivision/<br>18b , Jalan Sutera Merah 2 , Taman Sutera<br>Singapore 81200]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            103.6894637,1.4782696,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Johor - Kawasan Segamat HQ</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.8444096,2.4848988,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Kajang</name>
+        <description>012 260 3939</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.7930785,2.978718,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Kelantan</name>
+        <description><![CDATA[+60 19-932 7091<br>https://www.facebook.com/SJAMKOTABHARU/<br>Lot 272, Tingkat 2, Taman Sri Lundang Binaraya, Jalan Sultan Yahya Petra, Lundang<br>Kota Bharu 15200]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            102.2657311,6.1005616,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Kota Kinablu</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            116.08753,5.9772109,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Kuala Lampur</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.723506,3.131287,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Negeri Sembilan</name>
+        <description><![CDATA[https://www.facebook.com/pg/sjamnsembilan/about/?ref=page_internal<br>No. 4 Jalan Dr. Krishnan, 70000 Seremban ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.9387027,2.7277568,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Pantai Selangor HQ</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.4333124,3.0311877,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Pahang - Kuantan</name>
+        <description><![CDATA[+60 9-568 3058<br>https://www.facebook.com/StJohn-Ambulance-Malaysia-Pahang-106360732783309/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            103.3422427,3.8223975,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Perak - Ipoh</name>
+        <description><![CDATA[+60 5-254 5946<br>https://www.facebook.com/St-John-Ambulance-Malaysia-State-of-Perak-Darul-Ridzuan-136160549759783/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.0838849,4.5966928,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Perak - SMK Sentosa Kampar</name>
+        <description><![CDATA[+60 5-254 5946<br>https://www.facebook.com/SJAM.AC90/<br>Taman Bandar Baru,, 31900 Kampar, Perak]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.1484838,4.3244025,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Pulau Pinang - ALPHA Ambulances (St John)</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.298145,5.405733,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Pulau Pinang - Penang</name>
+        <description><![CDATA[http://www.sjamemas.org.my/ <br>04 646 9934<br>013 408 0993 ]]></description>
+        <styleUrl>#icon-1806-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.2980443,5.4056819,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Pulau Pinang - Permatang Pauh</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4100689,5.408227,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Sabah - Sandakan</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            118.1172752,5.839227,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Sarawak Headquarters</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            110.3445529,1.525052,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Selangor - Darul Ehsan</name>
+        <description>https://www.facebook.com/sjamsde/</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.4280692,3.0284279,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Selangor Tengah Utara</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.631155,3.214829,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SJAM: Taiping</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.7536395,4.8645886,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Hospital EMS Malaysia</name>
+      <Placemark>
+        <name>Johor: Johor Behru - Hospital Sultanah Aminah</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.745965,1.458556,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kedah: Hospital Baling</name>
+        <description><![CDATA[04-470 1333 ext 1901 Email: drgayathari@moh.gov.my<br>http://hbaling.moh.gov.my/v3/modules/news/article.php?storyid=14]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.9256534,5.6779471,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kedah: Alor Star - Hospital Sultanah Bahiyah</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4063735,6.1488245,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kelantan: Hospital Universiti Sains Malaysia</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.2808537,6.0990447,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kelantan: Kota Bharu - Hospital Raja Perempuan Zainab II</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.2462288,6.1247136,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Klinik Kesihatan Batu 14 Hulu Langat</name>
+        <description>https://www.facebook.com/pages/Klinik-Kesihatan-Batu-14-Hulu-Langat/207195099462558</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.814715,3.1112204,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Pusat Perubatan Universiti Malaya</name>
+        <description><![CDATA[603 7949 2500<br>http://eservices.ummc.edu.my/websiteummc/patient/AmbulanceHotline.asp?]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.651736,3.1127791,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Skuad Penyelamat Dewan Bandaraya Kuala Lumpur</name>
+        <description><![CDATA[skuadpenyelamatdbkl.blogspot.com<br>https://www.facebook.com/SPDBKL/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.691898,3.170522,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Melaka: Hospital Melaka</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.2617829,2.2183863,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Negeri Sembilan: Seremban - Hospital Tuanku Ja'afar]]></name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.944444,2.709699,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Perlis: Kangar - Hospital Tuanku Fauziah</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.1912543,6.4409892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pulau Pinang: Hospital Seberang Jaya</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4076015,5.3943235,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Perak: Ipoh - Hospital Raja Permaisuri Bainun</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.0901591,4.6037987,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sabah: Kota Belud - Hospital Kota Belud</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            116.4261431,6.3462194,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sabah: Kota Kinabalu - Hospital Queen Elizabeth 2</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            116.0937928,5.9664872,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sabah: Tawau - Hospital Tawau</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            117.8806828,4.249723,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sarawak: Kuching - Hospital Umum Sarawak</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            110.3396085,1.5436269,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sarawak: Miri - Hospital Miri</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            113.9997153,4.3739648,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Ampang - Hospital Ampang</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.763899,3.1278409,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Batu Caves - Hospital Selayang</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6463021,3.2426232,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Klang - Hospital Tengku Ampuan Rahimah</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.4402283,3.0195525,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Petaling Jaya - Hospital Assunta / First Ambulance Services Sdn. Bhd.</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.646795,3.093465,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Serdang - Hospital Serdang</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.719962,2.976899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Sungai Buloh - Hospital Sungai Buloh</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.5826093,3.2179506,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Terengganu: Kuala Terengganu - Hospital Sultanah Nur Zahirah</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.1520329,5.3253465,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wilayah Persekutuan: Putrajaya - Hospital Putrajaya</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6741956,2.9290529,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Private EMS Malaysia</name>
+      <Placemark>
+        <name>Johor: Aman Transmedik Service</name>
+        <description><![CDATA[07 224 9000 (Hotline)<br>07 221 9919 <br>Ambulance Service for JB, Muar & Malacca ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            103.746,1.46926,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Johor: Medic Care</name>
+        <description>https://www.facebook.com/medic.care.services/</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            103.788236,1.546109,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kedah: Cakra Ambulance Services</name>
+        <description><![CDATA[019-4803042 / 010 - 382 6128<br>https://www.facebook.com/Cakra-Ambulance-Services-176246179240959/<br>36, Lorong Meranti 1/4 Taman Meranti, 09000 kedah Kulim]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.5396849,5.3602723,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kedah: SP Ambulance Service</name>
+        <description>https://www.facebook.com/spambulanceservice/</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.5048489,5.6512911,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kedah: SP Ambulance Service</name>
+        <description>+60 12-558 7536</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.4939852,5.6400346,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kelantan: ProLife Medic Ambulance Services</name>
+        <description><![CDATA[+60 19-906 5055<br>https://www.facebook.com/prolifemedic/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            102.2540778,6.1385906,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kelantan: Red Ambulance Services</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            102.2561402,6.1302891,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Code3 EMS Services</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.631076,3.1468691,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Elite Emergency Management Services</name>
+        <description><![CDATA[+60 18-266 4995<br>https://www.facebook.com/eliteemergency/<br>GOMBAK, 53100 Kuala Lumpur]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.713239,3.229302,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: EMS Services</name>
+        <description><![CDATA[+60 3-4021 0203<br>instagram.com/emsservices]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.7179651,3.2082384,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Global Doctors Centre EMS Service</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6520709,3.165608,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Maha Mas Medic Services Sdn Bhd</name>
+        <description>https://www.facebook.com/AmbulanceKL/</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.702495,3.180962,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Maha Mas Medic Services</name>
+        <description><![CDATA[http://www.mahamasmedic.com.my/ <br>728, 3rd level, Jalan Sentul, 51000 Kuala Lumpur <br>Tel: 03 4044 9099, 019 274 9099, Fax: 03 4044 9044 ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.6927134,3.1771315,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: MMR Ambulance</name>
+        <description><![CDATA[+60 11-2660 6026<br>No 628-B Tingkat 2 & 3, Batu 4 Jalan Ipoh<br>Kuala Lumpur, Malaysia 52100<br>https://www.facebook.com/mmrambulance/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.6792698,3.1962121,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Paramedic Ambulance</name>
+        <description><![CDATA[+60 11-1222 0008<br>www.paramedicambulance.com.my<br>https://www.facebook.com/Paramedicemss/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.7513253,3.1298763,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Rasyah Medic Services</name>
+        <description><![CDATA[+60 12-559 4551<br>Lorong Jugra, Taman desa, Jalan Klang Lama., 58100 Kuala Lumpur<br>www.facebook.com/RMSambulance]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.6757376,3.0960051,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>KL: Rayamars Ambulance Services</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.7524744,3.1278415,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kuala Terengganu: Mega Medic Ambulance</name>
+        <description><![CDATA[+60 19-999 0491<br>https://www.facebook.com/mega.medic.service<br>Panji alam, 20400 Kuala Terengganu]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            103.1497335,5.290195,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pahang: Ambulance Medical Service</name>
+        <description><![CDATA[+60 11-1874 2306<br>https://www.facebook.com/EMRSBTG06/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.913679,3.512838,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Pahanag: A & E Medical Ambulance Service]]></name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            103.3083701,3.8220567,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Perak: B & K Ambulance Services]]></name>
+        <description>Tel: 05 546 1999 </description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.110765,4.6123893,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Perlis: BP Healthcare @ Jalan Jubli Perak</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.1919621,6.434917,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pulau Pinang: Ambulance Medilife</name>
+        <description><![CDATA[04-646-3999<br>http://www.sritanjung.my/services-main/medilife-ambulance.html]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            100.2866811,5.3208689,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pulau Pinang: Northern Transmedi Ambulance</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.466716,5.361602,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Ampang - Wide Medic Ambulance Service</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.7630381,3.1445764,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Petaling Jaya - Code3 EMS</name>
+        <description><![CDATA[+60 14-647 6369<br>Level 28, PJ Exchange, No.16A Persiaran Barat,, 46050 Petaling Jaya, Malaysia<br>https://www.facebook.com/codethreeems/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.649963,3.0833541,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Petaling Jaya - Puteri Malaysia Ambulance 2000 (East Asia) Sdn. Bhd.</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6181454,3.0990059,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Petaling Jaya - SMA Medic Ambulance Service</name>
+        <description><![CDATA[+60 16-511 1177<br>https://www.facebook.com/Sma-medic-ambulance-service-1032755843401788/<br>Petaling utama, Petaling Jaya, Malaysia]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.6259706,3.137388,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Puchong - VhiVhi Ambulance</name>
+        <description><![CDATA[+60 17-363 6692<br>https://www.facebook.com/vhivhiambulance/<br>No 12-03, Jalan Puteri 1/4, Bandar Puteri Puchong]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.6205284,3.0317898,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Seri Kembangan - Global Pro Medic Ambulance</name>
+        <description><![CDATA[+60 12-377 4991<br>www.globalpromedic.com.my<br>https://www.facebook.com/GPMAmbulance/<br>Jalan Karunmas 9,Taman Desa Karunmas, 43300 Seri Kembangan]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.7005897,3.026623,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Seri Kembangan - WNK One Ambulance</name>
+        <description><![CDATA[01126399938 ( Hotline 24/7 )<br>http://wnkoneambulance.weebly.com/<br>https://www.facebook.com/WnkOneAmbulance<br>No 1, Jalan SB Indah 2/7, <br>Taman Sungai Besi Indah,<br>43300 Seri Kembangan, <br>Selangor Darul Ehsan]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.7276907,3.0290551,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Shah Alam - Avicenna Global Services II</name>
+        <description><![CDATA[+60 11-180 5819<br>https://www.facebook.com/AGS-II-646276415413240/<br>19, JALAN TEMBIKAI 4/3, SEKSYEN 4,, 40000 Shah Alam]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.5116978,3.077277,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Subang Jaya - Lifesaver Ambulance</name>
+        <description><![CDATA[017-51-1641<br>fb.me/LifesaverAmbulanceMalaysia<br>https://www.facebook.com/LifesaverAmbulanceMalaysia/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.592726,3.069157,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Subang Jaya - Paramedic Ems Services Sdn. Bhd,</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.5743133,2.9926274,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Teluk Intan: Medifa Care Ambulance Service</name>
+        <description><![CDATA[+60 19-560 4003<br>https://www.facebook.com/medifacareambulance/<br>Taman Melor, 36000 Teluk Intan]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            101.0435987,4.0189008,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Air Medical Malaysia</name>
+      <Placemark>
+        <name>Kedah: Alor Star - Hospital Sultanah Bahiyah</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            100.4082581,6.1492342,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sarawak: Helipad Hospital Miri</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            113.9994601,4.3732845,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Batu Caves - Helipad Hospital Selayang</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6485826,3.2424383,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Petaling Jaya - Helipad Pusat Perubatan Universiti Malaya</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6521654,3.1120835,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Serdang - Helipad Hospital Serdang</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.7201396,2.9784664,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Selangor: Subang - Plus Helicopter Services Sdn Bhd</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.5625115,3.1243922,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>WP Putrajaya: Helipad Hospital Putrajaya</name>
+        <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            101.6728598,2.9290582,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
