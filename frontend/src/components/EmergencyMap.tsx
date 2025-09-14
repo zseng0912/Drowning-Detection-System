@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+// Interactive emergency response map component for pool surveillance system
+// Displays nearest emergency services with real-time location and calling capabilities
+import { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { MapPin, Phone, Clock, Navigation, AlertTriangle, Guitar as Hospital, MapPinIcon, Loader } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, AlertTriangle, Guitar as Hospital, MapPinIcon, Loader, Eye, EyeOff } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix default Leaflet marker icons
+// Fix default Leaflet marker icons for proper display
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -12,7 +14,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// Create red marker icon for emergency services
+// Custom marker icons for different emergency service priorities
 const redIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
@@ -22,9 +24,19 @@ const redIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
-// Component to change map view when user location changes
-// ChangeView component removed to allow free map navigation
+// Yellow marker for secondary emergency services
+const yellowIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
+// Map view management - allows free navigation without auto-centering
+
+// Emergency service data structure
 interface EmergencyService {
   id: string;
   name: string;
@@ -40,7 +52,7 @@ interface UserLocation {
   lng: number;
 }
 
-// Haversine formula to calculate distance between two points
+// Distance calculation using Haversine formula for accurate geolocation
 const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
   const R = 6371; // Radius of the Earth in kilometers
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -53,7 +65,7 @@ const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: numbe
   return R * c;
 };
 
-// Parse KML data
+// KML file parser for Malaysian emergency services data
 const parseKMLData = async (): Promise<EmergencyService[]> => {
   try {
     const response = await fetch('/src/Malaysia EMS Map.kml');
@@ -110,18 +122,18 @@ const parseKMLData = async (): Promise<EmergencyService[]> => {
   }
 };
 
-
-
 export default function EmergencyMap() {
+  // State management for emergency map functionality
   const [selectedService, setSelectedService] = useState<EmergencyService | null>(null);
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [emergencyServices, setEmergencyServices] = useState<EmergencyService[]>([]);
   const [nearestServices, setNearestServices] = useState<EmergencyService[]>([]);
   const [loading, setLoading] = useState(true);
   const [locationError, setLocationError] = useState<string | null>(null);
+  const [showAllServices, setShowAllServices] = useState(false);
   const mapRef = useRef<L.Map | null>(null);
 
-  // Load KML data and get user location on component mount
+  // Initialize map with emergency services data and user geolocation
   useEffect(() => {
     const initializeMap = async () => {
       try {
@@ -138,6 +150,13 @@ export default function EmergencyMap() {
                 lng: position.coords.longitude
               };
               setUserLocation(userLoc);
+              
+              // Auto-center map to user location on first load
+              setTimeout(() => {
+                if (mapRef.current) {
+                  mapRef.current.setView([userLoc.lat, userLoc.lng], 13);
+                }
+              }, 100);
               
               // Calculate distances and get nearest services
               const servicesWithDistance = services.map(service => ({
@@ -159,8 +178,8 @@ export default function EmergencyMap() {
               setLoading(false);
             },
             (error) => {
-              console.error('Geolocation error:', error);
-              let errorMessage = 'Unable to get your location.';
+              // console.error('Geolocation error:', error);
+              let errorMessage = '';
               
               switch (error.code) {
                 case error.PERMISSION_DENIED:
@@ -173,7 +192,6 @@ export default function EmergencyMap() {
                   errorMessage = 'Location request timed out. Using default location (Kuala Lumpur).';
                   break;
                 default:
-                  errorMessage = 'An unknown error occurred while retrieving location. Using default location (Kuala Lumpur).';
                   break;
               }
               
@@ -204,6 +222,7 @@ export default function EmergencyMap() {
     initializeMap();
   }, []);
 
+  // Handle emergency phone calls to selected services
   const handleEmergencyCall = (service: EmergencyService) => {
     if (service.phone) {
       window.open(`tel:${service.phone}`, '_self');
@@ -212,6 +231,7 @@ export default function EmergencyMap() {
     }
   };
 
+  // Color coding for different emergency service categories
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'Red Crescent Malaysia': return 'text-red-600 bg-red-100';
@@ -221,10 +241,12 @@ export default function EmergencyMap() {
     }
   };
 
-  // Default center (Kuala Lumpur)
-  const defaultCenter: [number, number] = [3.139, 101.6869];
+  // Map center coordinates - defaults to Kuala Lumpur if location unavailable
+  const defaultCenter: [number, number] = [3.0550807,101.6980014];
   const mapCenter = userLocation ? [userLocation.lat, userLocation.lng] as [number, number] : defaultCenter;
 
+
+  // Loading state display while fetching data and location
   if (loading) {
     return (
       <div className="p-6 space-y-6">
@@ -243,9 +265,10 @@ export default function EmergencyMap() {
     );
   }
 
+  // Main emergency map interface layout
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
+      {/* Header Section - Emergency map title and status */}
       <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-2 flex items-center">
           <Hospital className="w-8 h-8 mr-3" />
@@ -262,7 +285,7 @@ export default function EmergencyMap() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Map View */}
+        {/* Map View Section - Interactive Leaflet map */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
@@ -282,11 +305,8 @@ export default function EmergencyMap() {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-
                 
-                {/* Removed ChangeView component to allow free map navigation */}
-                
-                {/* User location marker */}
+                {/* User Location Marker - Shows current position */}
                 {userLocation && (
                   <Marker position={[userLocation.lat, userLocation.lng]}>
                     <Popup>
@@ -297,38 +317,83 @@ export default function EmergencyMap() {
                   </Marker>
                 )}
                 
-                {/* Emergency service markers */}
-                {nearestServices.map((service) => (
-                  <Marker
-                    key={service.id}
-                    position={service.coordinates}
-                    icon={redIcon}
-                    eventHandlers={{
-                      click: () => setSelectedService(service)
-                    }}
-                  >
-                    <Popup>
-                      <div className="max-w-xs">
-                        <h4 className="font-semibold text-sm mb-2">{service.name}</h4>
-                        <p className="text-xs text-gray-600 mb-2">{service.category}</p>
-                        {service.distance && (
-                          <p className="text-xs text-blue-600 mb-2">
-                            Distance: {service.distance.toFixed(2)} km
-                          </p>
-                        )}
-                        <button
-                          onClick={() => handleEmergencyCall(service)}
-                          className="w-full bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs"
-                        >
-                          Call {service.phone}
-                        </button>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
+                {/* Emergency Service Markers - Toggle between all/nearest */}
+                {showAllServices ? (
+                  // Show all services with different colors
+                  emergencyServices.map((service) => {
+                    const isTopFive = nearestServices.some(ns => ns.id === service.id);
+                    return (
+                      <Marker
+                        key={service.id}
+                        position={service.coordinates}
+                        icon={isTopFive ? redIcon : yellowIcon}
+                        eventHandlers={{
+                          click: () => setSelectedService(service)
+                        }}
+                      >
+                        <Popup>
+                          <div className="max-w-xs">
+                            <h4 className="font-semibold text-sm mb-2">{service.name}</h4>
+                            <p className="text-xs text-gray-600 mb-2">{service.category}</p>
+                            {service.distance && (
+                              <p className="text-xs text-blue-600 mb-2">
+                                Distance: {service.distance.toFixed(2)} km
+                              </p>
+                            )}
+                            <button
+                              onClick={() => handleEmergencyCall(service)}
+                              className="w-full bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs"
+                            >
+                              Call {service.phone}
+                            </button>
+                          </div>
+                        </Popup>
+                      </Marker>
+                    );
+                  })
+                ) : (
+                  // Show only top 5 nearest services
+                  nearestServices.map((service) => (
+                    <Marker
+                      key={service.id}
+                      position={service.coordinates}
+                      icon={redIcon}
+                      eventHandlers={{
+                        click: () => setSelectedService(service)
+                      }}
+                    >
+                      <Popup>
+                        <div className="max-w-xs">
+                          <h4 className="font-semibold text-sm mb-2">{service.name}</h4>
+                          <p className="text-xs text-gray-600 mb-2">{service.category}</p>
+                          {service.distance && (
+                            <p className="text-xs text-blue-600 mb-2">
+                              Distance: {service.distance.toFixed(2)} km
+                            </p>
+                          )}
+                          <button
+                            onClick={() => handleEmergencyCall(service)}
+                            className="w-full bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs"
+                          >
+                            Call {service.phone}
+                          </button>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))
+                )}
               </MapContainer>
               
-              {/* Floating Recenter Button */}
+              {/* Floating Controls - Toggle and recenter buttons */}
+              <button 
+                onClick={() => setShowAllServices(!showAllServices)}
+                className="absolute bottom-4 left-4 bg-white hover:bg-gray-50 text-gray-700 p-3 rounded-full shadow-lg border border-gray-200 transition-all hover:shadow-xl z-[1000]"
+                title={showAllServices ? "Show only nearest services" : "Show all emergency services"}
+              >
+                {showAllServices ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
+              
+              {/* Recenter Map Button */}
               <button 
                 onClick={() => {
                   if (userLocation && mapRef.current) {
@@ -344,9 +409,9 @@ export default function EmergencyMap() {
           </div>
         </div>
 
-        {/* Emergency Services List */}
+        {/* Emergency Services Panel - Quick actions and nearest services */}
         <div className="space-y-4">
-          {/* Quick Actions */}
+          {/* Quick Actions Panel - Emergency calling buttons */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
@@ -376,6 +441,7 @@ export default function EmergencyMap() {
             </div>
           </div>
 
+          {/* Nearest Services List - Top 5 closest emergency services */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4">Top 5 Nearest Emergency Services</h3>
             
@@ -414,14 +480,6 @@ export default function EmergencyMap() {
                       <span>{service.phone}</span>
                     </div>
                   </div>
-
-                  {service.description && (
-                    <div className="mt-2 ml-8">
-                      <p className="text-xs text-gray-500 line-clamp-2">
-                        {service.description.replace(/<[^>]*>/g, '').substring(0, 100)}...
-                      </p>
-                    </div>
-                  )}
 
                   <button
                     onClick={(e) => {

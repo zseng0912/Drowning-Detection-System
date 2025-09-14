@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
     "@googlemaps/react-wrapper": "^1.2.0",
     "axios": "^1.11.0",
     "leaflet": "^1.9.4",

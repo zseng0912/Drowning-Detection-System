@@ -1,41 +1,54 @@
+// React component for AI-powered drowning detection system
+// Supports both file upload and live camera feed analysis
 import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Play, Brain, FileVideo, Image as ImageIcon, AlertTriangle, CheckCircle, Clock, Target, Camera, Monitor, Square } from 'lucide-react';
 import { api, WebcamStatus, PredictionResult } from '../services/api';
 
 export default function DrowningDetection() {
+  // State management for model selection and file handling
   const [selectedModel, setSelectedModel] = useState('underwater');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [predictionResult, setPredictionResult] = useState<PredictionResult | null>(null);
+  
+  // URL states for different media sources
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [streamingUrl, setStreamingUrl] = useState<string | null>(null);
   const [realtimeStreamUrl, setRealtimeStreamUrl] = useState<string | null>(null);
+  
+  // Session and processing states
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [downloadAvailable, setDownloadAvailable] = useState<boolean>(false);
   const [inputMode, setInputMode] = useState<'upload' | 'camera'>('upload');
+  const [enhancementEnabled, setEnhancementEnabled] = useState<boolean>(true);
+  
+  // Refs for DOM elements
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // Processing and camera states
   const [isProcessing, setIsProcessing] = useState(false);
   const [isStreamActive, setIsStreamActive] = useState(false);
   const [webcamStatus, setWebcamStatus] = useState<WebcamStatus | null>(null);
   const statusIntervalRef = useRef<number | null>(null);
 
+  // Available AI models for drowning detection
   const models = [
     {
       id: 'underwater',
       name: 'Underwater Drowning Detection',
-      description: 'YOLOv8l model for detecting drowning incidents in underwater camera feeds',
-      accuracy: '0.937 mAP@0.5',
-      processingTime: '2.453s',
-      trainingData: '5167 samples',
+      description: 'YOLOv11s model for detecting drowning incidents in underwater camera feeds',
+      accuracy: '0.934 mAP@50',
+      processingTime: '6.869ms',
+      trainingData: '10833 samples',
       features: ['Object Detection','Object Tracking']
     },
     {
       id: 'above-water',
       name: 'Above Water Drowning Detection + DeepSORT',
-      description: 'YOLOv8l model optimized for surface-level drowning detection and distress signals',
-      accuracy: '0.916 mAP@0.5',
-      processingTime: '2.407s',
-      trainingData: '2843 samples',
+      description: 'YOLOv11s model optimized for surface-level drowning detection and distress signals',
+      accuracy: '0.868 mAP@50',
+      processingTime: '9.199ms',
+      trainingData: '8826 samples',
       features: ['Object Detection', 'Object Counting', 'Multi-person Tracking with DeepSort','Unique Swimmer IDs']
     }
   ];
@@ -45,6 +58,7 @@ export default function DrowningDetection() {
     checkWebcamStatus();
   }, []);
 
+  // Check current webcam status from backend
   const checkWebcamStatus = async () => {
     try {
       const status = await api.getWebcamStatus();
@@ -73,10 +87,11 @@ export default function DrowningDetection() {
     }
   };
 
+  // Start camera stream with selected model and enhancement options
   const startCamera = async () => {
     try {
       setIsProcessing(true);
-      const result = await api.startWebcam(selectedModel);
+      const result = await api.startWebcam(selectedModel, selectedModel === 'underwater' ? enhancementEnabled : false);
       
       if (result.success) {
         setIsStreamActive(true);
@@ -126,6 +141,7 @@ export default function DrowningDetection() {
     };
   }, [isStreamActive]);
 
+  // Handle file upload and create preview URL
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
@@ -136,6 +152,7 @@ export default function DrowningDetection() {
     }
   };
   
+  // Recursively check video processing status until completion
   const checkProcessingStatus = async (sessionId: string) => {
     try {
       const status = await api.getVideoSessionStatus(sessionId);
@@ -150,6 +167,7 @@ export default function DrowningDetection() {
     }
   };
 
+  // Download processed video with detection annotations
   const handleDownloadVideo = async () => {
     if (!currentSessionId) return;
     
@@ -161,6 +179,7 @@ export default function DrowningDetection() {
     }
   };
 
+  // Clear all results and stop active processes
   const handleClearResults = async () => {
     try {
       // Stop webcam if active
@@ -212,6 +231,7 @@ export default function DrowningDetection() {
     }
   };
 
+  // Main prediction handler for both upload and camera modes
   const handlePredict = async () => {
     if (inputMode === 'upload' && uploadedFile) {
       setIsProcessing(true);
@@ -221,7 +241,7 @@ export default function DrowningDetection() {
         
         if (source === 'video') {
           // Use real-time video processing for videos
-          const result = await api.processVideoRealtime(selectedModel, uploadedFile);
+          const result = await api.processVideoRealtime(selectedModel, uploadedFile, selectedModel === 'underwater' ? enhancementEnabled : false);
           setRealtimeStreamUrl(result.streamUrl);
           setCurrentSessionId(result.sessionId);
           setDownloadAvailable(false);
@@ -237,7 +257,7 @@ export default function DrowningDetection() {
           checkProcessingStatus(result.sessionId);
         } else {
           // Use regular prediction for images
-          const data = await api.predict(selectedModel, source, uploadedFile);
+          const data = await api.predict(selectedModel, source, uploadedFile, selectedModel === 'underwater' ? enhancementEnabled : false);
           setPredictionResult(data);
           setPreviewUrl(`data:image/jpeg;base64,${data.image_base64}`);
           setStreamingUrl(null);
@@ -262,6 +282,7 @@ export default function DrowningDetection() {
     }
   };
   
+  // Determine risk level based on confidence score and drowning detection
   const getRiskLevel = (confidence: number, isDrowning: boolean) => {
     if (!isDrowning) return { level: 'Safe', color: 'text-green-600 bg-green-100', icon: CheckCircle };
     if (confidence > 0.9) return { level: 'Critical', color: 'text-red-600 bg-red-100', icon: AlertTriangle };
@@ -271,9 +292,10 @@ export default function DrowningDetection() {
 
   const selectedModelData = models.find(m => m.id === selectedModel);
 
+  // Main component render with responsive layout
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
+      {/* Header Section - App title and description */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-2 flex items-center">
           <Brain className="w-8 h-8 mr-3" />
@@ -282,10 +304,11 @@ export default function DrowningDetection() {
         <p className="text-purple-100">Test and validate drowning detection models with your own video and image data</p>
       </div>
 
+      {/* Main Content Grid - Left panel for controls, right panel for preview */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Left Panel - Controls */}
+        {/* Left Panel - Model selection, enhancement options, and file upload */}
         <div className="space-y-6">
-          {/* Model Selection */}
+          {/* Model Selection Section - Choose between underwater and above-water models */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <Target className="w-5 h-5 mr-2" />
@@ -331,14 +354,63 @@ export default function DrowningDetection() {
             </div>
           </div>
 
-          {/* File Upload */}
+          {/* Enhancement Options - FUnIE-GAN toggle for underwater model */}
+          {selectedModel === 'underwater' && (
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-4 flex items-center">
+                <Brain className="w-5 h-5 mr-2" />
+                Enhancement Options
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 border rounded-lg">
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-gray-900">FUnIE-GAN Enhancement</h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Apply underwater image enhancement using Generative Adversarial Networks for improved detection accuracy
+                    </p>
+                    <div className="flex items-center space-x-2 mt-2 text-xs text-gray-500">
+                      <span>• Improves underwater visibility</span>
+                      <span>• Reduces noise and distortion</span>
+                      <span>• Enhances color correction</span>
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={enhancementEnabled}
+                        onChange={(e) => setEnhancementEnabled(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                    </label>
+                  </div>
+                </div>
+                
+                {enhancementEnabled && (
+                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-purple-600" />
+                      <span className="text-sm font-medium text-purple-800">Enhancement Active</span>
+                    </div>
+                    <p className="text-xs text-purple-600 mt-1">
+                      Frames will be enhanced before detection for improved underwater visibility
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Input Section - File upload or camera feed selection */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               {inputMode === 'upload' ? <Upload className="w-5 h-5 mr-2" /> : <Camera className="w-5 h-5 mr-2" />}
               {inputMode === 'upload' ? 'Upload Media' : 'Live Camera Feed'}
             </h3>
             
-            {/* Input Mode Selection */}
+            {/* Input Mode Toggle - Switch between upload and camera modes */}
             <div className="flex space-x-4 mb-6">
               <button
                 onClick={() => {
@@ -492,7 +564,7 @@ export default function DrowningDetection() {
             </div>
           </div>
 
-          {/* Model Info */}
+          {/* Model Information Display - Shows selected model details */}
           {selectedModelData && (
             <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-4">Model Information</h3>
@@ -507,7 +579,7 @@ export default function DrowningDetection() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Model Type:</span>
-                  <span className="font-semibold">Deep Learning YOLOv8l</span>
+                  <span className="font-semibold">Deep Learning YOLOv11s</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Training Data:</span>
@@ -518,9 +590,9 @@ export default function DrowningDetection() {
           )}
         </div>
 
-        {/* Right Panel - Preview and Results */}
+        {/* Right Panel - Media preview and analysis results */}
         <div className="space-y-6">
-          {/* Media Preview */}
+          {/* Media Preview Section - Shows uploaded files or live camera feed */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4">Media Preview</h3>
             
@@ -572,13 +644,13 @@ export default function DrowningDetection() {
             </div>
           </div>
 
-          {/* Prediction Results */}
+          {/* Prediction Results Section - Displays AI analysis results */}
           {predictionResult && (
             <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-4">Prediction Results</h3>
               
               <div className="space-y-4">
-                {/* Risk Assessment */}
+                {/* Risk Assessment Display - Shows drowning risk level and confidence */}
                 <div className="p-4 border rounded-lg">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="font-semibold">Risk Assessment</h4>
@@ -620,7 +692,7 @@ export default function DrowningDetection() {
                   })()}
                 </div>
 
-                {/* Recommendations */}
+                {/* Safety Recommendations - AI-generated safety suggestions */}
                 {predictionResult.analysis?.recommendations && (
                   <div className="p-4 border rounded-lg">
                     <h4 className="font-semibold mb-3">Recommendations</h4>
@@ -635,7 +707,7 @@ export default function DrowningDetection() {
                   </div>
                 )}
 
-                {/* Detected Objects */}
+                {/* Detected Objects List - Shows all objects found in the analysis */}
                 {predictionResult.analysis?.detectedObjects && predictionResult.analysis.detectedObjects.length > 0 && (
                   <div className="p-4 border rounded-lg">
                     <h4 className="font-semibold mb-3">Detected Objects</h4>
@@ -650,7 +722,7 @@ export default function DrowningDetection() {
                   </div>
                 )}
                 
-                {/* Download Button for Processed Videos */}
+                {/* Video Download Section - Download processed video with annotations */}
                 {downloadAvailable && (
                   <div className="mt-4 pt-4 border-t">
                     <button

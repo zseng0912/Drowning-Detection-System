@@ -1,3 +1,5 @@
+// React component for user authentication and login
+// Provides secure access to the pool surveillance system
 import React, { useState } from 'react';
 import { User, Lock, Eye, EyeOff, Waves, Shield } from 'lucide-react';
 import { api, setAuthToken, setUser } from '../services/api';
@@ -7,21 +9,23 @@ interface LoginFormProps {
 }
 
 export default function LoginForm({ onLogin }: LoginFormProps) {
+  // State management for login form
   const [credentials, setCredentials] = useState({
-    username: '',
+    email: '',
     password: ''
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Handle login form submission and authentication
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
     
     try {
-      const data = await api.login(credentials.username, credentials.password);
+      const data = await api.login(credentials.email, credentials.password);
       
       if (data.success) {
         // Store token and user data
@@ -43,16 +47,17 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
     }
   };
 
+  // Main login page render with ocean-themed design
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-teal-800 to-blue-900 flex items-center justify-center p-8">
-      {/* Background Pattern */}
+      {/* Background Pattern - Decorative overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-y-12"></div>
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white to-transparent transform skew-y-12"></div>
       </div>
 
       <div className="relative w-full max-w-md">
-        {/* Header */}
+        {/* Header Section - App branding and title */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <div className="p-4 bg-white bg-opacity-20 rounded-full backdrop-blur-sm">
@@ -63,7 +68,7 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
           <p className="text-blue-200">Lifeguard Access Portal</p>
         </div>
 
-        {/* Login Form */}
+        {/* Login Form Container - Main authentication interface */}
         <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
           <div className="flex items-center justify-center mb-6">
             <Shield className="w-8 h-8 text-blue-600 mr-2" />
@@ -71,25 +76,25 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Username Field */}
+            {/* Email Input Field */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Username
+                Email
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
-                  value={credentials.username}
-                  onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+                  value={credentials.email}
+                  onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="Enter your username"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
             </div>
 
-            {/* Password Field */}
+            {/* Password Input Field with visibility toggle */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
@@ -114,14 +119,14 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
               </div>
             </div>
 
-            {/* Error Message */}
+            {/* Error Message Display */}
             {error && (
               <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
                 {error}
               </div>
             )}
 
-            {/* Login Button */}
+            {/* Login Submit Button */}
             <button
               type="submit"
               disabled={isLoading}
@@ -135,23 +140,23 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
             </button>
           </form>
 
-          {/* Demo Accounts */}
+          {/* Demo Accounts Section - Pre-filled login options */}
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-sm text-gray-600 text-center mb-4">Available Accounts:</p>
             <div className="space-y-2">
               <button
-                onClick={() => setCredentials({ username: 'admin', password: 'password123' })}
+                onClick={() => setCredentials({ email: 'lifeguard@admin.com', password: 'password123' })}
                 className="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
               >
                 <div className="font-medium text-blue-900">Pool Administrator</div>
-                <div className="text-sm text-blue-600">admin / password123</div>
+                <div className="text-sm text-blue-600">lifeguard@admin.com / password123</div>
               </button>
 
             </div>
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Footer - Copyright information */}
         <div className="text-center mt-12 text-blue-200 text-sm">
           <p>© 2025 Pool Surveillance System. All rights reserved.</p>
         </div>

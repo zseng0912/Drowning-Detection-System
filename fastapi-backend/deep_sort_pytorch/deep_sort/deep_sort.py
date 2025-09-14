@@ -1,3 +1,4 @@
+# DeepSort tracking algorithm implementation for multi-object tracking
 import numpy as np
 import torch
 
@@ -10,8 +11,10 @@ from .sort.tracker import Tracker
 __all__ = ['DeepSort']
 
 
+# Main DeepSort class for object tracking with deep learning features
 class DeepSort(object):
-    def __init__(self, model_path, max_dist=0.5, min_confidence=0.3, nms_max_overlap=0.5, max_iou_distance=0.7, max_age=70, n_init=3, nn_budget=100, use_cuda=True):
+    # Initialize DeepSort tracker with model and tracking parameters
+    def __init__(self, model_path, max_dist=0.85, min_confidence=0.3, nms_max_overlap=0.5, max_iou_distance=0.95, max_age=40, n_init=3, nn_budget=50, use_cuda=True):
         self.min_confidence = min_confidence
         self.nms_max_overlap = nms_max_overlap
 
@@ -23,6 +26,7 @@ class DeepSort(object):
         self.tracker = Tracker(
             metric, max_iou_distance=max_iou_distance, max_age=max_age, n_init=n_init)
 
+    # Update tracker with new detections and return tracked objects with IDs
     def update(self, bbox_xywh, confidences, oids, ori_img):
         self.height, self.width = ori_img.shape[:2]
         # generate detections
@@ -52,6 +56,7 @@ class DeepSort(object):
             outputs = np.stack(outputs, axis=0)
         return outputs
 
+    # Convert bounding box format from center coordinates to top-left coordinates
     """
     TODO:
         Convert bbox from xc_yc_w_h to xtl_ytl_w_h
@@ -67,6 +72,7 @@ class DeepSort(object):
         bbox_tlwh[:, 1] = bbox_xywh[:, 1] - bbox_xywh[:, 3] / 2.
         return bbox_tlwh
 
+    # Convert center coordinates to corner coordinates (x1,y1,x2,y2)
     def _xywh_to_xyxy(self, bbox_xywh):
         x, y, w, h = bbox_xywh
         x1 = max(int(x - w / 2), 0)
@@ -75,6 +81,7 @@ class DeepSort(object):
         y2 = min(int(y + h / 2), self.height - 1)
         return x1, y1, x2, y2
 
+    # Convert top-left width-height format to corner coordinates
     def _tlwh_to_xyxy(self, bbox_tlwh):
         """
         TODO:
@@ -88,9 +95,11 @@ class DeepSort(object):
         y2 = min(int(y+h), self.height - 1)
         return x1, y1, x2, y2
 
+    # Increment age of all tracks for lifecycle management
     def increment_ages(self):
         self.tracker.increment_ages()
 
+    # Convert corner coordinates to top-left width-height format
     def _xyxy_to_tlwh(self, bbox_xyxy):
         x1, y1, x2, y2 = bbox_xyxy
 
@@ -100,6 +109,7 @@ class DeepSort(object):
         h = int(y2 - y1)
         return t, l, w, h
 
+    # Extract deep learning features from detected objects for tracking
     def _get_features(self, bbox_xywh, ori_img):
         im_crops = []
         for box in bbox_xywh:

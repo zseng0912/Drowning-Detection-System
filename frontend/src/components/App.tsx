@@ -1,3 +1,4 @@
+// Main application component for AquaGuard AI - Advanced Drowning Detection & Water Safety System
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import UserProfile from './components/UserProfile';
@@ -8,13 +9,15 @@ import ImageEnhancement from './components/ImageEnhancement';
 import EmergencyMap from './components/EmergencyMap';
 import { Waves, Shield } from 'lucide-react';
 
+// Main App component managing authentication, navigation, and system state
 function App() {
+  // State management for user authentication and application state
   const [user, setUser] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('surveillance');
   const [isSystemActive, setIsSystemActive] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  // Update time every second
+  // Real-time clock update effect
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -23,6 +26,7 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
+  // Authentication handlers
   const handleLogin = (userData: any) => {
     setUser(userData);
   };
@@ -31,10 +35,13 @@ function App() {
     setUser(null);
   };
 
+  // Render login screen if user is not authenticated
   if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center">
+        {/* Login page layout */}
         <div className="text-center mb-8">
+          {/* Application branding */}
           <div className="flex items-center justify-center mb-6">
             <Waves className="w-12 h-12 text-blue-400 mr-3" />
             <h1 className="text-4xl font-bold text-white">AquaGuard AI</h1>
@@ -46,18 +53,23 @@ function App() {
     );
   }
 
+  // Main application layout for authenticated users
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      {/* Application header with branding and user info */}
       <header className="bg-black bg-opacity-20 backdrop-blur-sm border-b border-blue-700">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
+            {/* Left side: Application logo and title */}
             <div className="flex items-center space-x-3">
               <Waves className="w-8 h-8 text-blue-400" />
               <h1 className="text-2xl font-bold text-white">AquaGuard AI</h1>
             </div>
+            {/* Right side: User profile and system status */}
             <div className="flex items-center space-x-4">
               <UserProfile user={user} onLogout={handleLogout} />
               <div className="flex flex-col items-end space-y-2">
+                {/* System status indicators */}
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
                     <Shield className="w-5 h-5 text-green-400" />
@@ -71,6 +83,7 @@ function App() {
                     {isSystemActive ? 'ACTIVE' : 'INACTIVE'}
                   </div>
                 </div>
+                {/* Real-time date and time display */}
                 <div className="text-right">
                   <div className="text-white text-lg font-bold">
                     {currentTime.toLocaleDateString('en-US', { 
@@ -95,10 +108,13 @@ function App() {
         </div>
       </header>
 
+      {/* Main content area */}
       <main className="container mx-auto px-6 py-8">
         <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
         
+        {/* Tab content rendering */}
         <div className="mt-8">
+          {/* Conditional rendering of tab components */}
           {activeTab === 'surveillance' && (
             <SurveillanceTab 
               isSystemActive={isSystemActive}

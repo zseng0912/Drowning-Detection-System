@@ -1,12 +1,15 @@
-import React from 'react';
+// Tab navigation component for switching between different modules of the AquaGuard AI system
 import { Monitor, Brain, Image, MapPin } from 'lucide-react';
 
+// Props interface for the TabNavigation component
 interface TabNavigationProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
 }
 
+// Main TabNavigation component providing horizontal tab interface for module switching
 export default function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
+  // Tab configuration array with icons and labels
   const tabs = [
     { id: 'surveillance', label: 'Live Surveillance', icon: Monitor },
     { id: 'detection', label: 'Drowning Detection', icon: Brain },
@@ -15,9 +18,12 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
   ];
 
   return (
+    // Main tab navigation container
     <div className="bg-white border-b border-gray-200 shadow-sm">
       <div className="px-6">
+        {/* Navigation bar with tab buttons */}
         <nav className="flex space-x-8">
+          {/* Map through tabs and render clickable tab buttons */}
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (

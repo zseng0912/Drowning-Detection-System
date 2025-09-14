@@ -1,15 +1,16 @@
+// API service module for AquaGuard AI pool surveillance system backend communication
 // API base URL
 const API_BASE_URL = 'http://127.0.0.1:8000';
 
-// Types
+// TypeScript interfaces for API request/response data structures
 export interface LoginCredentials {
-  username: string;
+  email: string;
   password: string;
 }
 
 export interface User {
   id: number;
-  username: string;
+  email: string;
   name: string;
   role: string;
   certifications: string[];
@@ -116,9 +117,9 @@ export interface RealTimeMetrics {
   message?: string;
 }
 
-// Main API object with all functions
+// Main API object containing all backend communication functions
 export const api = {
-  // Webcam control
+  // Webcam control functions for live camera feed management
   async startWebcam(modelType: string = 'underwater', enhancement: boolean = false): Promise<{ success: boolean; message: string }> {
     const formData = new FormData();
     formData.append('model_type', modelType);
@@ -136,6 +137,7 @@ export const api = {
     return response.json();
   },
 
+  // Stop webcam feed and cleanup resources
   async stopWebcam(): Promise<{ success: boolean; message: string }> {
     const response = await fetch(`${API_BASE_URL}/webcam/stop`, {
       method: 'POST'
@@ -148,6 +150,7 @@ export const api = {
     return response.json();
   },
 
+  // Get current webcam status and configuration
   async getWebcamStatus(): Promise<WebcamStatus> {
     const response = await fetch(`${API_BASE_URL}/webcam/status`);
     
@@ -158,12 +161,15 @@ export const api = {
     return response.json();
   },
 
-  // Prediction
-  async predict(modelType: string, source: 'image' | 'video', file: File): Promise<PredictionResult> {
+  // AI prediction functions for drowning detection analysis
+  async predict(modelType: string, source: 'image' | 'video', file: File, enhancement: boolean = false): Promise<PredictionResult> {
     const formData = new FormData();
     formData.append('model_type', modelType);
     formData.append('source', source);
     formData.append('file', file);
+    if (modelType === 'underwater') {
+      formData.append('enhancement', enhancement.toString());
+    }
     
     const response = await fetch(`${API_BASE_URL}/predict`, {
       method: 'POST',
@@ -177,14 +183,14 @@ export const api = {
     return response.json();
   },
 
-  // Login
-  async login(username: string, password: string): Promise<{ success: boolean; token?: string; user?: any; message?: string }> {
+  // Authentication functions for user login
+  async login(email: string, password: string): Promise<{ success: boolean; token?: string; user?: any; message?: string }> {
     const response = await fetch(`${API_BASE_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ email, password })
     });
     
     if (!response.ok) {
@@ -194,50 +200,13 @@ export const api = {
     return response.json();
   },
 
-  // Auth functions
+  // User logout and session cleanup
   async logout(): Promise<void> {
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');
   },
 
-  async getCurrentUser(): Promise<User | null> {
-    const userStr = localStorage.getItem('user');
-    return userStr ? JSON.parse(userStr) : null;
-  },
-
-  async verifyToken(): Promise<boolean> {
-    const token = localStorage.getItem('authToken');
-    return !!token;
-  },
-
-  // System functions
-  async getStatus() {
-    const response = await fetch(`${API_BASE_URL}/`);
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return response.json();
-  },
-
-  async uploadFile(file: File) {
-    const formData = new FormData();
-    formData.append('file', file);
-    
-    const response = await fetch(`${API_BASE_URL}/upload`, {
-      method: 'POST',
-      body: formData
-    });
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return response.json();
-  },
-
-  // Video Enhancement functions
+  // Video enhancement functions using GAN models for underwater clarity improvement
   async enhanceVideo(file: File, createComparison: boolean = false, realTime: boolean = false): Promise<VideoEnhancementResult> {
     const formData = new FormData();
     formData.append('file', file);
@@ -256,6 +225,7 @@ export const api = {
     return response.json();
   },
 
+  // Check GAN model availability and status
   async getGanModelStatus(): Promise<GanModelStatus> {
     const response = await fetch(`${API_BASE_URL}/gan_model/status`);
     
@@ -266,20 +236,17 @@ export const api = {
     return response.json();
   },
 
+  // Generate URL for downloading enhanced video results
   getEnhancedVideoUrl(sessionId: string, videoType: 'enhanced' | 'comparison' = 'enhanced'): string {
     return `${API_BASE_URL}/download_enhanced_video/${sessionId}?video_type=${videoType}`;
   },
 
-  // Real-time video streaming URLs
-  getRealTimeEnhancedVideoUrl(sessionId: string): string {
-    return `${API_BASE_URL}/enhance_video_stream_only/${sessionId}`;
-  },
-
+  // Get real-time side-by-side comparison stream URL
   getRealTimeSideBySideUrl(sessionId: string): string {
     return `${API_BASE_URL}/enhance_video_stream/${sessionId}`;
   },
 
-  // Image enhancement
+  // Image enhancement functions for single frame processing
   async enhanceImage(file: File): Promise<ImageEnhancementResult> {
     const formData = new FormData();
     formData.append('file', file);
@@ -296,24 +263,22 @@ export const api = {
     return response.json();
   },
 
+  // Generate URL for downloading enhanced image results
   getEnhancedImageUrl(sessionId: string, imageType: 'enhanced' | 'comparison' | 'original' = 'enhanced'): string {
     return `${API_BASE_URL}/download_enhanced_image/${sessionId}/${imageType}`;
   },
 
-  // Live camera enhancement URLs
-  getLiveCameraEnhancedUrl(): string {
-    return `${API_BASE_URL}/live_camera_enhanced`;
-  },
-
+  // Get live camera comparison stream URL
   getLiveCameraComparisonUrl(): string {
     return `${API_BASE_URL}/live_camera_comparison`;
   },
 
+  // Get webcam video feed stream URL
   getWebcamVideoFeedUrl(): string {
     return `${API_BASE_URL}/video_feed`;
   },
 
-  // Real-time metrics
+  // Real-time performance metrics for processing speed monitoring
   async getRealTimeMetrics(): Promise<RealTimeMetrics> {
     const response = await fetch(`${API_BASE_URL}/realtime_metrics`);
     
@@ -324,11 +289,14 @@ export const api = {
     return response.json();
   },
 
-  // Real-time video processing
-  async processVideoRealtime(modelType: string, file: File): Promise<string> {
+  // Real-time video processing with live streaming capabilities
+  async processVideoRealtime(modelType: string, file: File, enhancement: boolean = false): Promise<string> {
     const formData = new FormData();
     formData.append('model_type', modelType);
     formData.append('file', file);
+    if (modelType === 'underwater') {
+      formData.append('enhancement', enhancement.toString());
+    }
     
     // Upload video and get session info
     const response = await fetch(`${API_BASE_URL}/realtime_video_process`, {
@@ -350,7 +318,7 @@ export const api = {
     };
   },
 
-  // Check video processing session status
+  // Check status of ongoing video processing session
   async getVideoSessionStatus(sessionId: string): Promise<any> {
     const response = await fetch(`${API_BASE_URL}/video_session_status/${sessionId}`);
     
@@ -361,7 +329,7 @@ export const api = {
     return response.json();
   },
 
-  // Download processed video
+  // Download processed video with detection results
   async downloadProcessedVideo(sessionId: string): Promise<void> {
     const response = await fetch(`${API_BASE_URL}/download_processed_video/${sessionId}`);
     
@@ -380,7 +348,7 @@ export const api = {
     document.body.removeChild(a);
   },
 
-  // Stop video processing session
+  // Stop ongoing video processing session and cleanup
   async stopVideoProcessing(sessionId: string): Promise<{ success: boolean; message: string }> {
     const response = await fetch(`${API_BASE_URL}/stop_video_processing/${sessionId}`, {
       method: 'POST'
@@ -394,24 +362,28 @@ export const api = {
   }
 };
 
-// Utility functions
+// Utility functions for authentication and local storage management
 export const setAuthToken = (token: string) => {
   localStorage.setItem('authToken', token);
 };
 
+// Retrieve stored authentication token
 export const getAuthToken = (): string | null => {
   return localStorage.getItem('authToken');
 };
 
+// Store user data in local storage
 export const setUser = (user: User) => {
   localStorage.setItem('user', JSON.stringify(user));
 };
 
+// Retrieve stored user data
 export const getUser = (): User | null => {
   const userStr = localStorage.getItem('user');
   return userStr ? JSON.parse(userStr) : null;
 };
 
+// Check if user is currently authenticated
 export const isAuthenticated = (): boolean => {
   return !!getAuthToken();
 };

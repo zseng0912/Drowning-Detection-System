@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
-    <name>Malaysia EMS Map</name>
-    <description><![CDATA[IN MALAYSIA, DIAL 999 IN CASE OF EMERGENCY.<br>For more information on Malaysian ambulance and emergency medical services visit Trek Medics' website:<br>https://www.trekmedics.org/database/malaysia-2/]]></description>
+    <name>Malaysia EMS</name>
+    <description/>
     <Style id="icon-1593-0288D1-nodesc-normal">
       <IconStyle>
         <color>ffd18802</color>
@@ -263,17 +263,51 @@
         <styleUrl>#icon-1899-DB4436-nodesc-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="icon-1899-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Folder>
       <name>Civil Defense Malaysia</name>
       <Placemark>
-        <name>Selangor: Angkatan Pertahanan Awam Daerah Klang
-
-</name>
+        <name>Selangor: Angkatan Pertahanan Awam Daerah Klang</name>
         <description><![CDATA[+60 3-3371 5921<br>www.civildefence.gov.my<br>https://www.facebook.com/APMDAERAHKLANG/]]></description>
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.4429884,3.0454566,0
+            101.442988,3.045457,0
           </coordinates>
         </Point>
       </Placemark>
@@ -283,7 +317,7 @@
         <styleUrl>#icon-1657-E65100</styleUrl>
         <Point>
           <coordinates>
-            101.704511,2.9368907,0
+            101.704511,2.936891,0
           </coordinates>
         </Point>
       </Placemark>
@@ -295,7 +329,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            103.765,1.4608333,0
+            103.765,1.460833,0
           </coordinates>
         </Point>
       </Placemark>
@@ -313,7 +347,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.3707598,6.1400881,0
+            100.37076,6.140088,0
           </coordinates>
         </Point>
       </Placemark>
@@ -340,7 +374,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.7253947,3.1949671,0
+            101.725395,3.194967,0
           </coordinates>
         </Point>
       </Placemark>
@@ -349,7 +383,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.7010238,3.1331961,0
+            101.701024,3.133196,0
           </coordinates>
         </Point>
       </Placemark>
@@ -359,7 +393,7 @@
         <styleUrl>#icon-1806-A52714</styleUrl>
         <Point>
           <coordinates>
-            101.71577,3.1631209,0
+            101.71577,3.163121,0
           </coordinates>
         </Point>
       </Placemark>
@@ -368,7 +402,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6757721,3.1415159,0
+            101.675772,3.141516,0
           </coordinates>
         </Point>
       </Placemark>
@@ -396,7 +430,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.9002198,3.5298457,0
+            101.90022,3.529846,0
           </coordinates>
         </Point>
       </Placemark>
@@ -405,7 +439,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            103.3249867,3.8086967,0
+            103.324987,3.808697,0
           </coordinates>
         </Point>
       </Placemark>
@@ -433,7 +467,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4592459,5.363983,0
+            100.459246,5.363983,0
           </coordinates>
         </Point>
       </Placemark>
@@ -442,7 +476,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.2981849,5.406086,0
+            100.298185,5.406086,0
           </coordinates>
         </Point>
       </Placemark>
@@ -461,7 +495,7 @@
         <styleUrl>#icon-1806-A52714</styleUrl>
         <Point>
           <coordinates>
-            101.6785469,2.9504766,0
+            101.678547,2.950477,0
           </coordinates>
         </Point>
       </Placemark>
@@ -488,7 +522,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            111.5304995,2.1203707,0
+            111.5305,2.120371,0
           </coordinates>
         </Point>
       </Placemark>
@@ -497,7 +531,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            111.8192648,2.3049925,0
+            111.819265,2.304992,0
           </coordinates>
         </Point>
       </Placemark>
@@ -506,7 +540,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.4460657,3.0433444,0
+            101.446066,3.043344,0
           </coordinates>
         </Point>
       </Placemark>
@@ -515,7 +549,7 @@
         <styleUrl>#icon-1806-A52714-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6464082,3.0923042,0
+            101.646408,3.092304,0
           </coordinates>
         </Point>
       </Placemark>
@@ -525,7 +559,7 @@
         <styleUrl>#icon-1806-A52714</styleUrl>
         <Point>
           <coordinates>
-            101.6898564,3.1541758,0
+            101.689856,3.154176,0
           </coordinates>
         </Point>
       </Placemark>
@@ -544,7 +578,7 @@
         <styleUrl>#icon-1806-A52714</styleUrl>
         <Point>
           <coordinates>
-            115.2489927,5.28151,0
+            115.248993,5.28151,0
           </coordinates>
         </Point>
       </Placemark>
@@ -556,7 +590,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4736561,5.8121148,0
+            100.473656,5.812115,0
           </coordinates>
         </Point>
       </Placemark>
@@ -565,7 +599,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.2647715,2.2129591,0
+            102.264772,2.212959,0
           </coordinates>
         </Point>
       </Placemark>
@@ -574,7 +608,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.5638613,2.0322858,0
+            102.563861,2.032286,0
           </coordinates>
         </Point>
       </Placemark>
@@ -583,7 +617,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            103.7611512,1.4807538,0
+            103.761151,1.480754,0
           </coordinates>
         </Point>
       </Placemark>
@@ -593,7 +627,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            102.8491867,2.4957355,0
+            102.849187,2.495736,0
           </coordinates>
         </Point>
       </Placemark>
@@ -603,7 +637,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            103.6894637,1.4782696,0
+            103.689464,1.47827,0
           </coordinates>
         </Point>
       </Placemark>
@@ -612,7 +646,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.8444096,2.4848988,0
+            102.84441,2.484899,0
           </coordinates>
         </Point>
       </Placemark>
@@ -622,7 +656,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.7930785,2.978718,0
+            101.793078,2.978718,0
           </coordinates>
         </Point>
       </Placemark>
@@ -632,7 +666,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            102.2657311,6.1005616,0
+            102.265731,6.100562,0
           </coordinates>
         </Point>
       </Placemark>
@@ -641,7 +675,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            116.08753,5.9772109,0
+            116.08753,5.977211,0
           </coordinates>
         </Point>
       </Placemark>
@@ -656,11 +690,11 @@
       </Placemark>
       <Placemark>
         <name>SJAM: Negeri Sembilan</name>
-        <description><![CDATA[https://www.facebook.com/pg/sjamnsembilan/about/?ref=page_internal<br>No. 4 Jalan Dr. Krishnan, 70000 Seremban ]]></description>
+        <description><![CDATA[https://www.facebook.com/pg/sjamnsembilan/about/?ref=page_internal<br>No. 4 Jalan Dr. Krishnan, 70000 Seremban]]></description>
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.9387027,2.7277568,0
+            101.938703,2.727757,0
           </coordinates>
         </Point>
       </Placemark>
@@ -669,7 +703,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.4333124,3.0311877,0
+            101.433312,3.031188,0
           </coordinates>
         </Point>
       </Placemark>
@@ -679,7 +713,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            103.3422427,3.8223975,0
+            103.342243,3.822398,0
           </coordinates>
         </Point>
       </Placemark>
@@ -689,7 +723,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.0838849,4.5966928,0
+            101.083885,4.596693,0
           </coordinates>
         </Point>
       </Placemark>
@@ -699,7 +733,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.1484838,4.3244025,0
+            101.148484,4.324402,0
           </coordinates>
         </Point>
       </Placemark>
@@ -714,11 +748,11 @@
       </Placemark>
       <Placemark>
         <name>SJAM: Pulau Pinang - Penang</name>
-        <description><![CDATA[http://www.sjamemas.org.my/ <br>04 646 9934<br>013 408 0993 ]]></description>
+        <description><![CDATA[http://www.sjamemas.org.my/ <br>04 646 9934<br>013 408 0993]]></description>
         <styleUrl>#icon-1806-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.2980443,5.4056819,0
+            100.298044,5.405682,0
           </coordinates>
         </Point>
       </Placemark>
@@ -727,7 +761,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4100689,5.408227,0
+            100.410069,5.408227,0
           </coordinates>
         </Point>
       </Placemark>
@@ -736,7 +770,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            118.1172752,5.839227,0
+            118.117275,5.839227,0
           </coordinates>
         </Point>
       </Placemark>
@@ -745,7 +779,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            110.3445529,1.525052,0
+            110.344553,1.525052,0
           </coordinates>
         </Point>
       </Placemark>
@@ -755,7 +789,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.4280692,3.0284279,0
+            101.428069,3.028428,0
           </coordinates>
         </Point>
       </Placemark>
@@ -773,7 +807,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.7536395,4.8645886,0
+            100.75364,4.864589,0
           </coordinates>
         </Point>
       </Placemark>
@@ -795,7 +829,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.9256534,5.6779471,0
+            100.925653,5.677947,0
           </coordinates>
         </Point>
       </Placemark>
@@ -804,7 +838,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4063735,6.1488245,0
+            100.406374,6.148824,0
           </coordinates>
         </Point>
       </Placemark>
@@ -813,7 +847,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.2808537,6.0990447,0
+            102.280854,6.099045,0
           </coordinates>
         </Point>
       </Placemark>
@@ -822,7 +856,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.2462288,6.1247136,0
+            102.246229,6.124714,0
           </coordinates>
         </Point>
       </Placemark>
@@ -832,7 +866,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.814715,3.1112204,0
+            101.814715,3.11122,0
           </coordinates>
         </Point>
       </Placemark>
@@ -842,7 +876,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.651736,3.1127791,0
+            101.651736,3.112779,0
           </coordinates>
         </Point>
       </Placemark>
@@ -861,7 +895,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.2617829,2.2183863,0
+            102.261783,2.218386,0
           </coordinates>
         </Point>
       </Placemark>
@@ -879,7 +913,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.1912543,6.4409892,0
+            100.191254,6.440989,0
           </coordinates>
         </Point>
       </Placemark>
@@ -888,7 +922,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4076015,5.3943235,0
+            100.407602,5.394324,0
           </coordinates>
         </Point>
       </Placemark>
@@ -897,7 +931,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.0901591,4.6037987,0
+            101.090159,4.603799,0
           </coordinates>
         </Point>
       </Placemark>
@@ -906,7 +940,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            116.4261431,6.3462194,0
+            116.426143,6.346219,0
           </coordinates>
         </Point>
       </Placemark>
@@ -915,7 +949,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            116.0937928,5.9664872,0
+            116.093793,5.966487,0
           </coordinates>
         </Point>
       </Placemark>
@@ -924,7 +958,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            117.8806828,4.249723,0
+            117.880683,4.249723,0
           </coordinates>
         </Point>
       </Placemark>
@@ -933,7 +967,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            110.3396085,1.5436269,0
+            110.339608,1.543627,0
           </coordinates>
         </Point>
       </Placemark>
@@ -942,7 +976,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            113.9997153,4.3739648,0
+            113.999715,4.373965,0
           </coordinates>
         </Point>
       </Placemark>
@@ -951,7 +985,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.763899,3.1278409,0
+            101.763899,3.127841,0
           </coordinates>
         </Point>
       </Placemark>
@@ -960,7 +994,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6463021,3.2426232,0
+            101.646302,3.242623,0
           </coordinates>
         </Point>
       </Placemark>
@@ -969,7 +1003,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.4402283,3.0195525,0
+            101.440228,3.019552,0
           </coordinates>
         </Point>
       </Placemark>
@@ -996,7 +1030,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.5826093,3.2179506,0
+            101.582609,3.217951,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1005,7 +1039,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            103.1520329,5.3253465,0
+            103.152033,5.325346,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1014,7 +1048,17 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6741956,2.9290529,0
+            101.674196,2.929053,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Columbia Asia Hospital - Bukit Jalil</name>
+        <description><![CDATA[+60 3-8657 9888<br>www.columbiaasia.com<br>No.9, Jalan Jalil Perkasa 7, Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.6872745,3.0582872,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1022,8 +1066,18 @@
     <Folder>
       <name>Private EMS Malaysia</name>
       <Placemark>
+        <name>MMR Ambulance</name>
+        <description><![CDATA[+60 11-2660 6026<br>www.mmrambulance.com<br>Pavilion, 2, Persiaran Jalil, Bukit Jalil, 57000 Wilayah Persekutuan, Wilayah Persekutuan Kuala Lumpur]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.6707302,3.0507085,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
         <name>Johor: Aman Transmedik Service</name>
-        <description><![CDATA[07 224 9000 (Hotline)<br>07 221 9919 <br>Ambulance Service for JB, Muar & Malacca ]]></description>
+        <description><![CDATA[07 224 9000 (Hotline)<br>07 221 9919 <br>Ambulance Service for JB, Muar & Malacca]]></description>
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
@@ -1047,7 +1101,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.5396849,5.3602723,0
+            100.539685,5.360272,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1057,7 +1111,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.5048489,5.6512911,0
+            100.504849,5.651291,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1067,7 +1121,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.4939852,5.6400346,0
+            100.493985,5.640035,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1077,7 +1131,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            102.2540778,6.1385906,0
+            102.254078,6.138591,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1086,7 +1140,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            102.2561402,6.1302891,0
+            102.25614,6.130289,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1095,7 +1149,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.631076,3.1468691,0
+            101.631076,3.146869,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1115,7 +1169,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.7179651,3.2082384,0
+            101.717965,3.208238,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1124,7 +1178,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6520709,3.165608,0
+            101.652071,3.165608,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1140,11 +1194,11 @@
       </Placemark>
       <Placemark>
         <name>KL: Maha Mas Medic Services</name>
-        <description><![CDATA[http://www.mahamasmedic.com.my/ <br>728, 3rd level, Jalan Sentul, 51000 Kuala Lumpur <br>Tel: 03 4044 9099, 019 274 9099, Fax: 03 4044 9044 ]]></description>
+        <description><![CDATA[http://www.mahamasmedic.com.my/ <br>728, 3rd level, Jalan Sentul, 51000 Kuala Lumpur <br>Tel: 03 4044 9099, 019 274 9099, Fax: 03 4044 9044]]></description>
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.6927134,3.1771315,0
+            101.692713,3.177132,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1154,7 +1208,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.6792698,3.1962121,0
+            101.67927,3.196212,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1164,7 +1218,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.7513253,3.1298763,0
+            101.751325,3.129876,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1174,7 +1228,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.6757376,3.0960051,0
+            101.675738,3.096005,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1183,7 +1237,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.7524744,3.1278415,0
+            101.752474,3.127842,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1193,7 +1247,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            103.1497335,5.290195,0
+            103.149734,5.290195,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1212,17 +1266,17 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            103.3083701,3.8220567,0
+            103.30837,3.822057,0
           </coordinates>
         </Point>
       </Placemark>
       <Placemark>
         <name><![CDATA[Perak: B & K Ambulance Services]]></name>
-        <description>Tel: 05 546 1999 </description>
+        <description>Tel: 05 546 1999</description>
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.110765,4.6123893,0
+            101.110765,4.612389,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1231,7 +1285,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.1919621,6.434917,0
+            100.191962,6.434917,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1241,7 +1295,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            100.2866811,5.3208689,0
+            100.286681,5.320869,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1259,7 +1313,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.7630381,3.1445764,0
+            101.763038,3.144576,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1269,7 +1323,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.649963,3.0833541,0
+            101.649963,3.083354,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1278,7 +1332,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6181454,3.0990059,0
+            101.618145,3.099006,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1288,7 +1342,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.6259706,3.137388,0
+            101.625971,3.137388,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1298,7 +1352,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.6205284,3.0317898,0
+            101.620528,3.03179,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1308,7 +1362,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.7005897,3.026623,0
+            101.70059,3.026623,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1318,7 +1372,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.7276907,3.0290551,0
+            101.727691,3.029055,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1328,7 +1382,7 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.5116978,3.077277,0
+            101.511698,3.077277,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1347,7 +1401,7 @@
         <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.5743133,2.9926274,0
+            101.574313,2.992627,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1357,7 +1411,47 @@
         <styleUrl>#icon-1899-DB4436</styleUrl>
         <Point>
           <coordinates>
-            101.0435987,4.0189008,0
+            101.043599,4.018901,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>JY EMS Ambulance Services</name>
+        <description><![CDATA[+60 17-787 7929<br>www.jyemsambulance.com<br>Dewan Serbaguna MBSJ, Jalan Besar, Kampung Baru Seri Kembangan, 43300 Seri Kembangan, Selangor]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.7057788,3.0221658,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>iCare Ambulance Services</name>
+        <description><![CDATA[+60 14-887 8807<br>icareambulanceservices.com<br>Jalan SP 2/7, Taman Serdang Perdana, 43300 Seri Kembangan, Selangor]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.7078147,3.0310984,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fast Medicare Ambulance Services (Managed by FMS Management Services)</name>
+        <description><![CDATA[+60 12-694 2866<br>Kuchai, Brem Park, Jalan Selesa 2, Happy Garden, 58200 Kuala Lumpur, Federal Territory of Kuala Lumpur]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.6873941,3.0860556,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jerai ambulance services</name>
+        <description><![CDATA[+60 17-402 7001<br>sites.google.com<br>Bandar Tasik Selatan, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur]]></description>
+        <styleUrl>#icon-1899-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            101.7096176,3.0720047,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1369,7 +1463,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            100.4082581,6.1492342,0
+            100.408258,6.149234,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1378,7 +1472,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            113.9994601,4.3732845,0
+            113.99946,4.373284,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1387,7 +1481,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6485826,3.2424383,0
+            101.648583,3.242438,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1396,7 +1490,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6521654,3.1120835,0
+            101.652165,3.112084,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1405,7 +1499,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.7201396,2.9784664,0
+            101.72014,2.978466,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1414,7 +1508,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.5625115,3.1243922,0
+            101.562512,3.124392,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1423,7 +1517,7 @@
         <styleUrl>#icon-1593-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
-            101.6728598,2.9290582,0
+            101.67286,2.929058,0
           </coordinates>
         </Point>
       </Placemark>

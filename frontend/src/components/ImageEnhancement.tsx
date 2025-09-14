@@ -1,8 +1,12 @@
+// Underwater image and video enhancement component using FUnIE-GAN model
+// Provides real-time enhancement for uploaded media and live camera feeds
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play, Pause, RotateCcw, Settings, Zap, Eye, Upload, Camera, Monitor, FileVideo, Image as ImageIcon, Download, AlertCircle } from 'lucide-react';
 import { api, VideoEnhancementResult, GanModelStatus, ImageEnhancementResult, RealTimeMetrics } from '../services/api';
 
+// Main image enhancement component with AI-powered underwater processing
 export default function ImageEnhancement() {
+  // State management for enhancement processing and UI controls
   const [isProcessing, setIsProcessing] = useState(false);
   const [inputMode, setInputMode] = useState<'upload' | 'camera'>('upload');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -22,14 +26,14 @@ export default function ImageEnhancement() {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  // Check GAN model status on component mount
+  // Initialize GAN model status check on component mount
   useEffect(() => {
     checkGanModelStatus();
   }, []);
 
-  // Fetch real-time metrics when streaming is active
+  // Real-time metrics polling for active enhancement streams
    useEffect(() => {
-     let interval: NodeJS.Timeout;
+     let interval: number;
      
      if (isRealTimeStreaming || (inputMode === 'camera' && isBackendWebcamActive)) {
        interval = setInterval(async () => {
@@ -49,6 +53,7 @@ export default function ImageEnhancement() {
      };
    }, [isRealTimeStreaming, inputMode, isBackendWebcamActive]);
 
+  // Check GAN model availability and status
   const checkGanModelStatus = async () => {
     try {
       const status = await api.getGanModelStatus();
@@ -62,6 +67,7 @@ export default function ImageEnhancement() {
     }
   };
 
+  // Start camera with backend webcam and enhancement capabilities
   const startCamera = async () => {
     try {
       // Start backend webcam with enhancement if GAN model is available
@@ -86,6 +92,7 @@ export default function ImageEnhancement() {
     }
   };
 
+  // Stop camera and cleanup all streams
   const stopCamera = async () => {
     try {
       if (isBackendWebcamActive) {
@@ -111,7 +118,7 @@ export default function ImageEnhancement() {
     }
   };
 
-  // Cleanup camera stream on component unmount or mode change
+  // Cleanup camera streams on component unmount
   React.useEffect(() => {
     return () => {
       if (stream) {
@@ -120,12 +127,14 @@ export default function ImageEnhancement() {
     };
   }, [stream]);
 
+  // Stop camera when switching to upload mode
   React.useEffect(() => {
     if (inputMode === 'upload') {
       stopCamera();
     }
   }, [inputMode]);
 
+  // Handle file upload and preview generation
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -137,6 +146,7 @@ export default function ImageEnhancement() {
     }
   };
 
+  // Main processing function for enhancement operations
   const handleProcessing = async () => {
     if (inputMode === 'upload' && !uploadedFile) return;
     if (inputMode === 'camera' && !isStreamActive) return;
@@ -185,9 +195,10 @@ export default function ImageEnhancement() {
     }
   };
 
+  // Main component layout with enhancement interface
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
+      {/* Header Section - Component title and GAN model status */}
       <div className="bg-gradient-to-r from-teal-600 to-blue-600 text-white p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-2">Underwater Image Enhancement</h2>
         <p className="text-teal-100">Advanced AI-powered image processing for underwater surveillance</p>
@@ -206,7 +217,7 @@ export default function ImageEnhancement() {
         )} */}
       </div>
 
-      {/* Error Display */}
+      {/* Error Display Section */}
       {error && (
         <div className="bg-red-50 border border-red-200 rounded-lg p-4">
           <div className="flex items-center space-x-2">
@@ -216,7 +227,7 @@ export default function ImageEnhancement() {
         </div>
       )}
 
-      {/* Success Display */}
+      {/* Success Display Section - Enhancement results */}
       {enhancementResult && (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4">
           <div className="flex items-center space-x-2">
@@ -243,8 +254,9 @@ export default function ImageEnhancement() {
         </div>
       )}
 
-      {/* Controls */}
+      {/* Main Controls Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Enhancement Settings Panel */}
         <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
           <h3 className="text-lg font-semibold mb-4 flex items-center">
             <Settings className="w-5 h-5 mr-2" />
@@ -252,7 +264,7 @@ export default function ImageEnhancement() {
           </h3>
           
           <div className="space-y-4">
-            {/* Model Selection */}
+            {/* FUnIE-GAN Model Selection and Info */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Enhancement Model</label>
               <div className="p-4 border-2 border-blue-500 bg-blue-50 rounded-lg">
@@ -295,7 +307,7 @@ export default function ImageEnhancement() {
               </div>
             </div>
 
-            {/* Input Mode Selection */}
+            {/* Input Source Selection - Upload vs Camera */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Input Source</label>
               <div className="flex space-x-2">
@@ -336,7 +348,7 @@ export default function ImageEnhancement() {
               </div>
             </div>
 
-            {/* Comparison Toggle */}
+            {/* Side-by-side Comparison Toggle */}
             <div>
               <label className="flex items-center space-x-2">
                 <input
@@ -350,7 +362,7 @@ export default function ImageEnhancement() {
               <p className="text-xs text-gray-500 mt-1">Shows original and enhanced videos side by side</p>
             </div>
 
-            {/* File Upload or Camera Selection */}
+            {/* Input Mode Interface - File Upload or Camera Controls */}
             {inputMode === 'upload' ? (
               <div className="space-y-4">
                 <div
@@ -484,8 +496,9 @@ export default function ImageEnhancement() {
           </div>
         </div>
 
-        {/* Before/After Comparison */}
+        {/* Media Preview and Results Section */}
         <div className="lg:col-span-2">
+          {/* Before/After Comparison Display */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
@@ -515,14 +528,15 @@ export default function ImageEnhancement() {
                     <span className="text-sm text-gray-600">Processing...</span>
                   </div>
                 )}
-                <div className="relative rounded-lg overflow-hidden h-[400px]">
+                <div className="relative rounded-lg overflow-hidden flex justify-center bg-gray-100">
                   {isRealTimeStreaming && streamSessionId ? (
                     // Show real-time side-by-side streaming
-                    <div className="w-full h-full">
+                    <div className="flex justify-center bg-gray-100">
                       <img 
                         src={api.getRealTimeSideBySideUrl(streamSessionId)}
                         alt="Real-time enhancement"
-                        className="w-full h-full object-cover"
+                        className="max-w-full h-auto object-contain"
+                        style={{ maxHeight: '70vh' }}
                       />
                       <div className="absolute top-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
                         Real-time Enhancement
@@ -530,11 +544,12 @@ export default function ImageEnhancement() {
                     </div>
                   ) : enhancementResult ? (
                     // Show actual enhanced video
-                    <div>
+                    <div className="flex justify-center">
                       <video
                         src={api.getEnhancedVideoUrl(enhancementResult.session_id, 'enhanced')}
                         controls
-                        className="w-full h-full object-cover"
+                        className="max-w-full h-auto object-contain"
+                        style={{ maxHeight: '70vh' }}
                         onError={(e) => {
                           console.error('Video playback error:', e);
                           setError('Enhanced video cannot be played. The video may be corrupted or in an unsupported format.');
@@ -554,13 +569,14 @@ export default function ImageEnhancement() {
                     </div>
                   ) : imageEnhancementResult ? (
                     // Show image enhancement results with side-by-side comparison
-                    <div className="w-full h-[400px] flex">
+                    <div className="w-full flex justify-center bg-gray-100 rounded-lg overflow-hidden">
                       {/* Original Image - Left Side */}
-                      <div className="w-1/2 relative">
+                      <div className="w-1/2 relative flex justify-center">
                         <img
                           src={api.getEnhancedImageUrl(imageEnhancementResult.session_id, 'original')}
                           alt="Original Image"
-                          className="w-full h-full object-contain bg-gray-100"
+                          className="max-w-full h-auto object-contain"
+                          style={{ maxHeight: '70vh' }}
                         />
                         <div className="absolute top-2 left-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
                           Original
@@ -568,11 +584,12 @@ export default function ImageEnhancement() {
                       </div>
                       
                       {/* Enhanced Image - Right Side */}
-                      <div className="w-1/2 relative">
+                      <div className="w-1/2 relative flex justify-center">
                         <img
                           src={api.getEnhancedImageUrl(imageEnhancementResult.session_id, 'enhanced')}
                           alt="Enhanced Image"
-                          className="w-full h-full object-contain bg-gray-100"
+                          className="max-w-full h-auto object-contain"
+                          style={{ maxHeight: '70vh' }}
                         />
                         <div className="absolute top-2 left-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
                           Enhanced
@@ -581,7 +598,7 @@ export default function ImageEnhancement() {
                     </div>
                   ) : isProcessing ? (
                     // Show processing state
-                    <div className="w-full h-[400px] bg-gradient-to-b from-blue-300 to-blue-500 flex items-center justify-center">
+                    <div className="w-full min-h-[320px] bg-gradient-to-b from-blue-300 to-blue-500 flex items-center justify-center rounded-lg">
                       <div className="text-center text-white">
                         <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
                         <div className="text-lg font-bold">Processing...</div>
@@ -590,11 +607,12 @@ export default function ImageEnhancement() {
                     </div>
                   ) : inputMode === 'camera' && isBackendWebcamActive && webcamStatus?.enhancement_active ? (
                     // Show live camera enhancement comparison
-                    <div className="w-full h-[400px] relative">
+                    <div className="flex justify-center bg-gray-100 relative">
                       <img 
                         src={api.getLiveCameraComparisonUrl()}
                         alt="Live camera enhancement comparison"
-                        className="w-full h-full object-cover"
+                        className="max-w-full h-auto object-contain"
+                        style={{ maxHeight: '70vh' }}
                         onError={(e) => {
                           console.error('Live camera stream error:', e);
                           setError('Unable to load live camera enhancement stream.');
@@ -628,7 +646,7 @@ export default function ImageEnhancement() {
                     </div>
                   ) : (
                     // Show placeholder with side-by-side layout
-                    <div className="w-full h-[400px] flex">
+                    <div className="w-full min-h-[320px] flex rounded-lg overflow-hidden">
                       {/* Original Feed - Left Side */}
                       <div className="w-1/2 bg-gradient-to-b from-gray-300 to-gray-500 flex items-center justify-center relative">
                         <div className="text-center text-white">
@@ -836,11 +854,12 @@ export default function ImageEnhancement() {
                   <Eye className="w-5 h-5 mr-2" />
                   Side-by-Side Comparison
                 </h4>
-                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                <div className="rounded-lg overflow-hidden bg-gray-100 flex justify-center">
                   <video
                     src={api.getEnhancedVideoUrl(enhancementResult.session_id, 'comparison')}
                     controls
-                    className="w-full h-full object-cover"
+                    className="max-w-full h-auto object-contain"
+                    style={{ maxHeight: '70vh' }}
                   />
                 </div>
                 <p className="text-sm text-gray-600 mt-2 text-center">
