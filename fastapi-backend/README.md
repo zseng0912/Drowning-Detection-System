@@ -23,7 +23,11 @@ A comprehensive backend system for drowning detection and underwater video enhan
 
 1. Install required packages:
    ```bash
-   pip install fastapi uvicorn opencv-python tensorflow torch ultralytics
+      # 1. Create a new conda environment from environment.yml
+      conda env create -f environment.yml
+      
+      # 2. Activate the environment
+      conda activate virtualEnv
    ```
 
 2. Ensure model files are in the correct directories:
