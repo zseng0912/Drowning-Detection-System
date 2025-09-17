@@ -62,19 +62,6 @@ A comprehensive backend system for drowning detection and underwater video enhan
 ### Authentication
 - `POST /login` - User authentication
 
-## 🧪 Testing
-
-Run the integration test to verify video enhancement functionality:
-```bash
-python test_enhancement.py
-```
-
-## 📚 Documentation
-
-- **Video Enhancement Guide**: See `VIDEO_ENHANCEMENT_README.md` for detailed usage
-- **API Documentation**: Available at `/docs` when server is running
-- **Model Information**: Check `/gan_model/status` for GAN model details
-
 ## 🔧 Configuration
 
 - **Model Paths**: Configured in `main.py` under model loading sections
@@ -83,7 +70,6 @@ python test_enhancement.py
 
 ## 🚨 Troubleshooting
 
-- **GAN Model Issues**: Check `VIDEO_ENHANCEMENT_README.md` troubleshooting section
 - **Dependencies**: Ensure all required packages are installed
 - **Model Files**: Verify model files exist in correct directories
 - **Logs**: Check console output for detailed error messages 
