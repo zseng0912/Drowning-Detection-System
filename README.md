@@ -9,7 +9,7 @@ Developed with FastAPI (backend) and ReactJS (frontend), the system offers real-
 
 This project demonstrates an end-to-end AI-driven safety and rescue system, simulating real-world pool surveillance applications for proactive drowning prevention and faster emergency response.
 
-![System Architecture](./System_Architecture.png)
+<img src="./System_Architecture.png" alt="System Architecture" height="50"/>
 
 ---
 
