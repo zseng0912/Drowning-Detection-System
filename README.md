@@ -18,54 +18,54 @@ Before getting started, ensure the following tools are installed on your system:
 <a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer">
   <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Python</strong>
-</a> – Required for the FastAPI backend, YOLO, and TensorFlow models.  
+</a> – Required for the FastAPI backend, YOLO, and TensorFlow models.<br>  
 
 <a href="https://nodejs.org/en" target="_blank" rel="noreferrer">
   <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Node.js</strong>
-</a> – Required for the ReactJS frontend.  
+</a> – Required for the ReactJS frontend.<br>   
 
 <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
   <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Visual Studio Code</strong>
-</a> – Recommended IDE for editing and running the project.   
+</a> – Recommended IDE for editing and running the project.<br>    
 
 <a href="https://colab.research.google.com/" target="_blank" rel="noreferrer">
   <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Google Colab" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Google Colab</strong>
-</a> – Used for model training and dataset experimentation.  
+</a> – Used for model training and dataset experimentation.<br>  
 
 <a href="https://www.roboflow.com" target="_blank" rel="noreferrer">
   <img src="https://avatars.githubusercontent.com/u/53104118?s=280&v=4" alt="Roboflow" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Roboflow</strong>
-</a> – For dataset collection, annotation, preprocessing, and augmentation.  
+</a> – For dataset collection, annotation, preprocessing, and augmentation.<br>  
 
 <a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer">
   <img src="https://images.g2crowd.com/uploads/product/image/2e1d25e4ac8ebd8d5bb1cf26e508446c/ultralytics.png" alt="Ultralytics Hub" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Ultralytics Hub</strong>
-</a> – Centralized platform for managing YOLO model training and datasets.  
+</a> – Centralized platform for managing YOLO model training and datasets.<br>  
 
 <h4 align="left">📦 Libraries and Tools:</h4>
 
 <a href="https://opencv.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40" style="vertical-align:middle;"/>
   <strong>OpenCV</strong>
-</a> – Computer vision library for image and video processing.  
+</a> – Computer vision library for image and video processing.<br>  
 
 <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch" width="40" height="40" style="vertical-align:middle;"/>
   <strong>PyTorch</strong>
-</a> – Deep learning framework used for YOLO model training and inference.  
+</a> – Deep learning framework used for YOLO model training and inference.<br>  
 
 <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Scikit-learn</strong>
-</a> – Machine learning utilities for preprocessing and evaluation.  
+</a> – Machine learning utilities for preprocessing and evaluation.<br>   
 
 <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" width="40" height="40" style="vertical-align:middle;"/>
   <strong>TensorFlow</strong>
-</a> – Used for FUnIE-GAN underwater image enhancement.  
+</a> – Used for FUnIE-GAN underwater image enhancement.<br>    
 
 
 ### ⚙️ Hardware Requirements
