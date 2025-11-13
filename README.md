@@ -161,5 +161,53 @@ Unlock intelligent and automated pool monitoring powered by deep learning and re
 
 ---
 
+## User Interface
+<table>
+  <tr>
+    <td>
+      <img src="./frontend/public/demo_video/login.png" alt="Login" width="500"/>
+      <p align="center">Login</p>
+    </td>
+    <td>
+      <img src="./frontend/public/demo_video/main_dashboard.png" alt="Main Dashboard" width="500"/>
+      <p align="center">Main Dashboard</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Sample Output
+![Sample Output](./frontend/public/demo_video/sample_output.png)
+
+---
+
+## 🚀 Future Enhancements
+
+The AI Drowning Detection System can be further improved in the following areas:
+
+### 📈 Expanding and Diversifying the Dataset
+- Increase the dataset with more diverse drowning and swimming scenarios, both above water and underwater.
+- Include data from different pool environments, lighting conditions, and swimmer appearances to improve model accuracy and generalization.
+  
+### 🧍‍♂️ Enhancing Detection with Pose Estimation Techniques
+- Integrate pose estimation or keypoint detection to detect critical body parts (head, hands, shoulders).
+- Enables accurate detection even when only partial body parts are visible above water.
+
+### ⚡ Optimizing Performance for Low-End Hardware
+- Explore lighter model versions or hardware acceleration techniques.
+- Consider model compression or running on affordable edge devices like NVIDIA Jetson to maintain real-time performance without expensive GPUs.
+
+### 📱 Mobile & Web Notifications
+- Push real-time alerts to mobile devices for pool operators or lifeguards.
+- Include SMS or email notifications for emergency situations.
+
+### 📊 Analytics & Reporting
+- Track historical drowning incidents and near-misses for risk analysis.
+- Generate heatmaps showing high-risk areas in pools.
+- Provide daily, weekly, or monthly reports for pool safety monitoring.
+
+---
+
 ## 📞 Support 
 If you encounter any issues or bugs, feel free to create a GitHub issue or contact the maintainer.
