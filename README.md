@@ -18,7 +18,7 @@ Before getting started, ensure the following tools are installed on your system:
 - ![Python](https://img.icons8.com/color/48/000000/python--v1.png) [**Python**](https://www.python.org/downloads/) – Required for the FastAPI backend, YOLO, and TensorFlow models.
 - ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) [**Node.js**](https://nodejs.org/en) – Required for the ReactJS frontend.
 <h4 align="left">Libraries and Tools:</h4>
-<p align="left"> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.roboflow.com" target="_blank" rel="noreferrer"> <img src="https://cdn.prod.website-files.com/5f6bc60e665f54545a1e52a5/612cef871007d407b02778f5_logomark.png" alt="roboflow" width="40" height="40"/> </a> <a href="https://colab.research.google.com" target="_blank" rel="noreferrer"> <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="google-colab" width="40" height="40"/> </a> <a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer"> <img src="https://cdn.prod.website-files.com/680a070c3b99253410dd3dcf/680a070c3b99253410dd3e13_logo.svg" alt="ultralytics-hub" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.roboflow.com" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/53104118?s=280&v=4" alt="roboflow" width="40" height="40"/> </a> <a href="https://colab.research.google.com" target="_blank" rel="noreferrer"> <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="google-colab" width="40" height="40"/> </a> <a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer"> <img src="https://images.g2crowd.com/uploads/product/image/2e1d25e4ac8ebd8d5bb1cf26e508446c/ultralytics.png" alt="ultralytics-hub" width="40" height="40"/> </a> </p>
 
 ### ⚙️ Hardware Requirements
 - NVIDIA GPU with CUDA support for faster YOLO and GAN model inference
@@ -75,47 +75,33 @@ npm run dev
 Unlock intelligent and automated pool monitoring powered by deep learning and real-time computer vision.
 
 ### 🧠 AI-Powered Drowning Detection
-    <ul>
-      <li>Utilizes YOLO deep learning model trained via Roboflow and Ultralytics Hub for accurate drowning detection.</li>
-      <li>Detects drowning incidents from both images and videos.</li>
-      <li>Supports real-time detection using live webcam feed.</li>
-    </ul>
+- Utilizes YOLO deep learning model trained via Roboflow and Ultralytics Hub for accurate drowning detection.
+- Detects drowning incidents from both images and videos.
+- Supports real-time detection using live webcam feed.
 
 ### 🌊 Underwater Image Enhancement
-    <ul>
-      <li>Integrated with FUnIE-GAN (Fast Underwater Image Enhancement GAN) built with TensorFlow.</li>
-      <li>Enhances clarity and visibility for underwater video feeds to improve model performance.</li>
-    </ul>
+- Integrated with FUnIE-GAN (Fast Underwater Image Enhancement GAN) using TensorFlow.
+- Enhances clarity and visibility for underwater video feeds to improve model performance.
 
 ### 🚨 Automated Alarm System
-    <ul>
-      <li>Triggers an instant alarm alert when a drowning event is detected.</li>
-      <li>Supports customizable alert mechanisms for pool operators or surveillance systems.</li>
-    </ul>
+- Triggers an instant alarm alert when a drowning event is detected.
+- Supports customizable alert mechanisms for pool operators or surveillance systems.
 
 ### 📸 Dual-View Monitoring
-    <ul>
-      <li>Supports both above-water and underwater camera feeds for comprehensive pool surveillance coverage.</li>
-      <li>Simulates a real-world smart pool monitoring environment.</li>
-    </ul>
+- Supports both above-water and underwater camera feeds for comprehensive pool surveillance coverage.
+- Simulates a real-world smart pool monitoring environment.
 
 ### ⚡ Real-Time Detection Interface
-    <ul>
-      <li>Built with FastAPI (Backend) and ReactJS (Frontend) for seamless data exchange.</li>
-      <li>Allows users to upload files or use real-time webcam streaming directly from the dashboard.</li>
-    </ul>
+- Built with FastAPI (Backend) and ReactJS (Frontend) for seamless data exchange.
+- Allows users to upload files or use real-time webcam streaming directly from the dashboard.
 
 ### 🆘 Emergency Response Integration
-    <ul>
-      <li>Automatically detects the current system location.</li>
-      <li>Provides the top 5 nearest emergency service centers (hospitals, rescue stations, etc.) for rapid response.</li>
-    </ul>
+- Automatically detects the current system location.
+- Provides the top 5 nearest emergency service centers (hospitals, rescue stations, etc.) for rapid response.
 
 ### 🧪 Testing & Validation Tabs
-    <ul>
-      <li>Dedicated sections for testing drowning detection and underwater enhancement functionalities.</li>
-      <li>Ensures proper operation before real-world deployment.</li>
-    </ul>
+- Dedicated sections for testing drowning detection and underwater enhancement functionalities.
+- Ensures proper operation before real-world deployment.
 
 ---
 
