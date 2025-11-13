@@ -161,7 +161,7 @@ Unlock intelligent and automated pool monitoring powered by deep learning and re
 
 ---
 
-## User Interface
+## 🖥️ User Interface
 <table>
   <tr>
     <td>
@@ -177,7 +177,7 @@ Unlock intelligent and automated pool monitoring powered by deep learning and re
 
 ---
 
-## Sample Output
+## 📸 Sample Output
 ![Sample Output](./frontend/public/demo_video/sample_output.png)
 
 ---
