@@ -55,7 +55,7 @@ Before getting started, ensure the following tools are installed on your system:
 <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch" width="40" height="40" style="vertical-align:middle;"/>
   <strong>PyTorch</strong>
-</a> – Deep learning framework used for YOLO model training and inference.<br>  
+</a> – Deep learning framework used for YOLO model training and inference.<br><br>  
 
 <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="40" height="40" style="vertical-align:middle;"/>
