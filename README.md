@@ -93,7 +93,7 @@ cd your-repo-name
 
 ## 🚀 Getting Started
 ### 1. Run FastAPI Backend
-bash
+```bash
 cd fastapi-backend
 # Create a virtual environment
 python -m venv <virtual_environment_name>
@@ -106,15 +106,17 @@ pip install -r requirements.txt
 
 # Start FastAPI server
 uvicorn main:app --host 0.0.0.0 --port 8000
+```
 
 ### 2. Run Frontend (Drowning Detection System)
-bash
+```bash
 cd frontend
 # Install Necessary Libraries
 npm install 
 
 # Start the app
 npm run dev
+```
 
 ---
 
