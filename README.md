@@ -15,14 +15,58 @@ This project demonstrates an end-to-end AI-driven safety and rescue system, simu
 Before getting started, ensure the following tools are installed on your system:
 
 ### 🖥️Software Requirements
-- ![Python](https://img.icons8.com/color/48/000000/python--v1.png) [**Python**](https://www.python.org/downloads/) – Required for the FastAPI backend, YOLO, and TensorFlow models.
-- ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) [**Node.js**](https://nodejs.org/en) – Required for the ReactJS frontend.
+<a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer">
+  <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Python</strong>
+</a> – Required for the FastAPI backend, YOLO, and TensorFlow models.  
+
+<a href="https://nodejs.org/en" target="_blank" rel="noreferrer">
+  <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Node.js</strong>
+</a> – Required for the ReactJS frontend.  
+
+<a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
+  <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Visual Studio Code</strong>
+</a> – Recommended IDE for editing and running the project.   
+
+<a href="https://colab.research.google.com/" target="_blank" rel="noreferrer">
+  <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Google Colab" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Google Colab</strong>
+</a> – Used for model training and dataset experimentation.  
+
 <a href="https://www.roboflow.com" target="_blank" rel="noreferrer">
   <img src="https://avatars.githubusercontent.com/u/53104118?s=280&v=4" alt="Roboflow" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Roboflow</strong>
-</a> – For dataset collection, annotation, preprocessing, and augmentation.
-<h4 align="left">Libraries and Tools:</h4>
-<p align="left"> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.roboflow.com" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/53104118?s=280&v=4" alt="roboflow" width="40" height="40"/> </a> <a href="https://colab.research.google.com" target="_blank" rel="noreferrer"> <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="google-colab" width="40" height="40"/> </a> <a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer"> <img src="https://images.g2crowd.com/uploads/product/image/2e1d25e4ac8ebd8d5bb1cf26e508446c/ultralytics.png" alt="ultralytics-hub" width="40" height="40"/> </a> </p>
+</a> – For dataset collection, annotation, preprocessing, and augmentation.  
+
+<a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer">
+  <img src="https://images.g2crowd.com/uploads/product/image/2e1d25e4ac8ebd8d5bb1cf26e508446c/ultralytics.png" alt="Ultralytics Hub" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Ultralytics Hub</strong>
+</a> – Centralized platform for managing YOLO model training and datasets.  
+
+<h4 align="left">📦 Libraries and Tools:</h4>
+
+<a href="https://opencv.org/" target="_blank" rel="noreferrer">
+  <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>OpenCV</strong>
+</a> – Computer vision library for image and video processing.  
+
+<a href="https://pytorch.org/" target="_blank" rel="noreferrer">
+  <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>PyTorch</strong>
+</a> – Deep learning framework used for YOLO model training and inference.  
+
+<a href="https://scikit-learn.org/" target="_blank" rel="noreferrer">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>Scikit-learn</strong>
+</a> – Machine learning utilities for preprocessing and evaluation.  
+
+<a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
+  <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" width="40" height="40" style="vertical-align:middle;"/>
+  <strong>TensorFlow</strong>
+</a> – Used for FUnIE-GAN underwater image enhancement.  
+
 
 ### ⚙️ Hardware Requirements
 - NVIDIA GPU with CUDA support for faster YOLO and GAN model inference
