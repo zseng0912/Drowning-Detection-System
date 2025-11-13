@@ -13,3 +13,5 @@ This project demonstrates an end-to-end AI-driven safety and rescue system, simu
 
 ## 🧰 Prerequisites
 Before getting started, ensure the following tools are installed on your system:
+- ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) [**Node.js**](https://nodejs.org/en)
+- ![Python]([https://img.icons8.com/?size=100&id=13441&format=png&color=000000]) [**Python**](https://www.python.org/downloads/)
