@@ -210,4 +210,7 @@ The AI Drowning Detection System can be further improved in the following areas:
 ---
 
 ## 📞 Support 
-If you encounter any issues or bugs, feel free to create a GitHub issue or contact the maintainer.
+If you encounter any issues or bugs, feel free to create a GitHub issue or contact the maintainer.  
+Developer: Tan Zu Seng  
+Email: zseng0912@gmail.com  
+LinkedIn: https://www.linkedin.com/in/tan-zu-seng-315197274/  
