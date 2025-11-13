@@ -79,10 +79,11 @@ Before getting started, ensure the following tools are installed on your system:
 ```bash
 # Clone the repository using Git
 git clone ttps://github.com/zseng0912/Drowning-Detection-System.git
-```
 
 # Navigate into the project folder
 cd your-repo-name
+```
+
 ### 📌 Option 2: Download ZIP 
 1. 🔗 Visit the repository on [GitHub](ttps://github.com/zseng0912/Drowning-Detection-System.git) 
 2. ⬇️ Click on the green **"Code"** button
