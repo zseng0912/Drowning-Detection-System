@@ -13,7 +13,111 @@ This project demonstrates an end-to-end AI-driven safety and rescue system, simu
 
 ## 🧰 Prerequisites
 Before getting started, ensure the following tools are installed on your system:
-- ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) [**Node.js**](https://nodejs.org/en)
-- ![Python]([https://avatars.githubusercontent.com/u/156354296?s=280&v=4]) [**Python**](https://www.python.org/downloads/)
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> </p>
+
+### 🖥️Software Requirements
+- ![Python](https://img.icons8.com/color/48/000000/python--v1.png) [**Python**](https://www.python.org/downloads/) – Required for the FastAPI backend, YOLO, and TensorFlow models.
+- ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) [**Node.js**](https://nodejs.org/en) – Required for the ReactJS frontend.
+<h4 align="left">Libraries and Tools:</h4>
+<p align="left"> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.roboflow.com" target="_blank" rel="noreferrer"> <img src="https://cdn.prod.website-files.com/5f6bc60e665f54545a1e52a5/612cef871007d407b02778f5_logomark.png" alt="roboflow" width="40" height="40"/> </a> <a href="https://colab.research.google.com" target="_blank" rel="noreferrer"> <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="google-colab" width="40" height="40"/> </a> <a href="https://www.ultralytics.com/hub" target="_blank" rel="noreferrer"> <img src="https://cdn.prod.website-files.com/680a070c3b99253410dd3dcf/680a070c3b99253410dd3e13_logo.svg" alt="ultralytics-hub" width="40" height="40"/> </a> </p>
+
+### ⚙️ Hardware Requirements
+- NVIDIA GPU with CUDA support for faster YOLO and GAN model inference
+- At least 4 GB VRAM (e.g., GTX 1050 Ti or higher)
+  
+---
+
+## 📥 Installation You can get the project files in two ways: 
+### 📌 Option 1: Clone via Git
+bash
+# Clone the repository using Git
+git clone ttps://github.com/zseng0912/Drowning-Detection-System.git
+
+# Navigate into the project folder
+cd your-repo-name
+### 📌 Option 2: Download ZIP 
+1. 🔗 Visit the repository on [GitHub](ttps://github.com/zseng0912/Drowning-Detection-System.git) 
+2. ⬇️ Click on the green **"Code"** button
+3. Select **"Download ZIP"**
+4. 🗂️ Extract the ZIP file to your desired location
+5. 📂 Open the extracted folder in your preferred code editor
+
+--- 
+
+## 🚀 Getting Started
+### 1. Run FastAPI Backend
+bash
+cd fastapi-backend
+# Create a virtual environment
+python -m venv <virtual_environment_name>
+
+# Activate virtual environment (Windows)
+<virtual_environment_name>\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start FastAPI server
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+### 2. Run Frontend (Drowning Detection System)
+bash
+cd frontend
+# Install Necessary Libraries
+npm install 
+
+# Start the app
+npm run dev
+
+---
+
+## 🌟 Key Features
+
+Unlock intelligent and automated pool monitoring powered by deep learning and real-time computer vision.
+
+### 🧠 AI-Powered Drowning Detection
+    <ul>
+      <li>Utilizes YOLO deep learning model trained via Roboflow and Ultralytics Hub for accurate drowning detection.</li>
+      <li>Detects drowning incidents from both images and videos.</li>
+      <li>Supports real-time detection using live webcam feed.</li>
+    </ul>
+
+### 🌊 Underwater Image Enhancement
+    <ul>
+      <li>Integrated with FUnIE-GAN (Fast Underwater Image Enhancement GAN) built with TensorFlow.</li>
+      <li>Enhances clarity and visibility for underwater video feeds to improve model performance.</li>
+    </ul>
+
+### 🚨 Automated Alarm System
+    <ul>
+      <li>Triggers an instant alarm alert when a drowning event is detected.</li>
+      <li>Supports customizable alert mechanisms for pool operators or surveillance systems.</li>
+    </ul>
+
+### 📸 Dual-View Monitoring
+    <ul>
+      <li>Supports both above-water and underwater camera feeds for comprehensive pool surveillance coverage.</li>
+      <li>Simulates a real-world smart pool monitoring environment.</li>
+    </ul>
+
+### ⚡ Real-Time Detection Interface
+    <ul>
+      <li>Built with FastAPI (Backend) and ReactJS (Frontend) for seamless data exchange.</li>
+      <li>Allows users to upload files or use real-time webcam streaming directly from the dashboard.</li>
+    </ul>
+
+### 🆘 Emergency Response Integration
+    <ul>
+      <li>Automatically detects the current system location.</li>
+      <li>Provides the top 5 nearest emergency service centers (hospitals, rescue stations, etc.) for rapid response.</li>
+    </ul>
+
+### 🧪 Testing & Validation Tabs
+    <ul>
+      <li>Dedicated sections for testing drowning detection and underwater enhancement functionalities.</li>
+      <li>Ensures proper operation before real-world deployment.</li>
+    </ul>
+
+---
+
+## 📞 Support 
+If you encounter any issues or bugs, feel free to create a GitHub issue or contact the maintainer.
