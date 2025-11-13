@@ -76,9 +76,10 @@ Before getting started, ensure the following tools are installed on your system:
 
 ## 📥 Installation You can get the project files in two ways: 
 ### 📌 Option 1: Clone via Git
-bash
+```bash
 # Clone the repository using Git
 git clone ttps://github.com/zseng0912/Drowning-Detection-System.git
+```
 
 # Navigate into the project folder
 cd your-repo-name
