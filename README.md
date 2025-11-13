@@ -45,7 +45,7 @@ Before getting started, ensure the following tools are installed on your system:
   <strong>Ultralytics Hub</strong>
 </a> – Centralized platform for managing YOLO model training and datasets.<br>  
 
-<h4 align="left">📦 Libraries and Tools:</h4>
+### 📦 Libraries and Tools
 
 <a href="https://opencv.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40" style="vertical-align:middle;"/>
