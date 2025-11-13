@@ -14,7 +14,7 @@ This project demonstrates an end-to-end AI-driven safety and rescue system, simu
 ## 🧰 Prerequisites
 Before getting started, ensure the following tools are installed on your system:
 
-### 🖥️Software Requirements
+### Software Requirements:
 <a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer">
   <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python" width="40" height="40" style="vertical-align:middle;"/>
   <strong>Python</strong>
@@ -45,7 +45,7 @@ Before getting started, ensure the following tools are installed on your system:
   <strong>Ultralytics Hub</strong>
 </a> – Centralized platform for managing YOLO model training and datasets.<br>  
 
-### 📦 Libraries and Tools
+### Libraries and Tools:
 
 <a href="https://opencv.org/" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40" style="vertical-align:middle;"/>
@@ -68,7 +68,7 @@ Before getting started, ensure the following tools are installed on your system:
 </a> – Used for FUnIE-GAN underwater image enhancement.<br>    
 
 
-### ⚙️ Hardware Requirements
+### Hardware Requirements:
 - NVIDIA GPU with CUDA support for faster YOLO and GAN model inference
 - At least 4 GB VRAM (e.g., GTX 1050 Ti or higher)
   
